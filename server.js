@@ -1,15 +1,17 @@
 const express = require('express');
+const routes = require('./routes');
+const sequelize = require('./config/connection');
 
-const PORT = process.env.PORT || 3001;
 const app = express();
-const yogaRoutes = require('./controllers');
+const PORT = process.env.PORT || 3001;
 
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
-app.use('/api', yogaRoutes);
+// turn on routes
+app.use(routes);
 
-app.listen(PORT, () => {
-  console.log(`API server now on port ${PORT}!`);
+// turn on connection to db and server
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
 });

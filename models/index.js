@@ -1,6 +1,5 @@
+const Pose = require('./Pose');
 
-const Pose = require('./Pose')
 
-//create associations here
 
 module.exports = Pose;
