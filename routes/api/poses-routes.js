@@ -11,7 +11,12 @@ router.get('/', (req, res) => {
 });
 
 // GET poses by id
-router.get('/:id', (req, res) => {});
+router.get('/:id', (req, res) => {
+    Pose.findOne({
+        where: {id: req.params.id }
+    }).then(poseData => res.json(poseData))
+    .catch(err => res.status(500).json(err))
+});
 
 // POST new pose
 router.post('/', (req, res) => {
