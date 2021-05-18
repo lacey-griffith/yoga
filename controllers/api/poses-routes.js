@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
     Pose.create({
         pose_name: req.body.pose_name,
         chakra: req.body.chakra,
-        muscles_used: req.body.muscles_used
+        muscle_group: req.body.muscle_group
     }).then(poseData => res.json(poseData))
     .catch(err => res.status(500).json(err))
 });

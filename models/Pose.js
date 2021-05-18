@@ -21,7 +21,7 @@ Pose.init(
        type: DataTypes.STRING,
        allowNull: true,
    },
-   muscles_used: {
+   muscle_group: {
        type: DataTypes.STRING,
        allowNull: false,
        validate: {len: [1,20]}
