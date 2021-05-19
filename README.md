@@ -24,7 +24,7 @@
 
 ## Contributors (add your github profile link in parenthesis!)
 * [Samantha Arellano]()
-* [Fernanda Frers]()
+* [Fernanda Frers](https://https://github.com/balloonicorn92)
 * [Lacey Griffith](https://github.com/lacey-griffith)
 * [Kyle McKinley]()
 
