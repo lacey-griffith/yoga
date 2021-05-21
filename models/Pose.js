@@ -17,11 +17,11 @@ Pose.init({
     unique: true,
     validate: { len: [1, 30] }
   },
-  chakra: {
+  difficulty: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  muscle_group: {
+  target_group_id: {
     type: DataTypes.STRING,
     allowNull: false,
     validate: { len: [1, 20] }
