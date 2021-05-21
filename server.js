@@ -11,11 +11,13 @@ app.use(express.urlencoded({ extended: true }));
 // turn on routes
 app.use(routes);
 
+// Setting handlebars as default template engine
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 
-// Setting handlebars as default template engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
+
