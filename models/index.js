@@ -33,6 +33,6 @@ Comment.belongsTo(Pose, {
 //poses have many comments
 Pose.hasMany(Comment, {
     foreignKey: 'pose_id'
-})
+});
 
 module.exports = { Pose, User, Comment };
