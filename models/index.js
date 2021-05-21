@@ -1,6 +1,7 @@
 const Comment = require('./Comment');
 const Pose = require('./Pose');
 const User = require('./User');
+const TargetGroup = require('./TargetGroup')
 
 
 //create associations
@@ -35,4 +36,4 @@ Pose.hasMany(Comment, {
     foreignKey: 'pose_id'
 });
 
-module.exports = { Pose, User, Comment };
+module.exports = { Pose, User, Comment, TargetGroup };
