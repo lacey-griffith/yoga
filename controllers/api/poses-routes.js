@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Pose } = require('../../models');
 
+//UPDATE routes to match new model!! 
+
 // GET all poses
 router.get('/', (req, res) => {
     Pose.findAll({
@@ -23,7 +25,7 @@ router.get('/:id', (req, res) => {
     })
     .catch(err => res.status(500).json(err))
 });
-
+ 
 // POST new pose
 router.post('/', (req, res) => {
     Pose.create({
