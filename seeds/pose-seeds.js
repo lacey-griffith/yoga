@@ -122,3 +122,7 @@ const poseData = [
         target_group_id: []
     }
 ]
+
+const seedPoses = () => Pose.bulkCreate(poseData);
+
+module.exports = seedPoses;
