@@ -36,7 +36,7 @@ router.put('/:id', (req, res) => {
         }
     }).then(userData => {
         if(!userData[0]){
-            res.status(404).json({message: 'User not found.'})
+            res.status(404).json({message: 'No user found, try again!'})
             return
         }
         res.json(userData)
