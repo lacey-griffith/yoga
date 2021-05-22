@@ -110,17 +110,18 @@ const poseData = [
         title: 'Half Lord Of The Fishes Pose',
         difficulty: 'Advanced',
         target_group_id: []
-    },
-    {
-        title: '',
-        difficulty: '',
-        target_group_id: []
-    },
-    {
-        title: '',
-        difficulty: '',
-        target_group_id: []
     }
+    // ,
+    // {
+    //     title: '',
+    //     difficulty: '',
+    //     target_group_id: []
+    // },
+    // {
+    //     title: '',
+    //     difficulty: '',
+    //     target_group_id: []
+    // }
 ]
 
 const seedPoses = () => Pose.bulkCreate(poseData);
