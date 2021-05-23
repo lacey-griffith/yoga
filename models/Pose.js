@@ -15,7 +15,8 @@ Pose.init({
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
-    validate: { len: [1, 30] }
+    //validate: { len: [1, 30] },
+    defaultValue: ''
   },
   difficulty: {
     type: DataTypes.STRING,
@@ -23,8 +24,8 @@ Pose.init({
   },
   target_group_id: {
     type: DataTypes.STRING,
-    allowNull: false,
-    validate: { len: [1, 20] }
+    allowNull: true,
+   // validate: { len: [1, 20] }
   }
 },
   {
