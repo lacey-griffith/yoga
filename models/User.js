@@ -24,9 +24,9 @@ User.init(
       password: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {
-          len: [4]
-        }
+       // validate: {
+        //  len: [4]
+       // }
       }
   },
   //hooks go here

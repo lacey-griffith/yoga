@@ -51,7 +51,7 @@ const targetGroupData = [
     },
     {
         target_group: 'Wrists'
-    },
+    }
 ]
 
 const seedTargetGroup = () => TargetGroup.bulkCreate(targetGroupData)

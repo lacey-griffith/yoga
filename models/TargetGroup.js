@@ -12,9 +12,9 @@ TargetGroup.init({
     },
     target_group: {
      type: DataTypes.STRING,
-     allowNull: false,
+     allowNull: true,
      unique: true,
-     validate: { len: [1, 30] }
+     //validate: { len: [1, 30] }
     }
 },
 {
