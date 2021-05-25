@@ -14,7 +14,7 @@ TargetGroup.init({
      type: DataTypes.STRING,
      allowNull: true,
      unique: true,
-     //validate: { len: [1, 30] }
+     validate: { len: [1, 30] }
     }
 },
 {

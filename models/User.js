@@ -18,14 +18,15 @@ User.init(
       },
       username: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       password: {
         type: DataTypes.STRING,
-        allowNull: false
-       // validate: {
-        //  len: [4]
-       // }
+        allowNull: false,
+       validate: {
+         len: [4]
+       }
       }
 }, {
   hooks: {
