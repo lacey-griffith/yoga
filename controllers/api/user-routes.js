@@ -26,8 +26,7 @@ router.get('/:id', (req,res) => {
     .catch(err => res.status(500).json(err))
 });
 
-//UPDATE user
-//error on updating ??
+//UPDATE user information
 router.put('/:id', (req, res) => {
     User.update(req.body, {
         individualHooks: true,
@@ -54,6 +53,25 @@ router.post('/', (req,res) => {
     .then(userData => res.json(userData))
     .catch(err => res.status(500).json(err))
 });
+
+//login a user
+//change route to dashboard?
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: {username: req.body.username}
+    }).then(userData => {
+        if(!userData){
+            res.status(404).json('User not found.')
+        }
+        const correctPw = userData.pwCheck(req.body.password)
+        if(!correctPw){
+            res.status(400).json({message: 'Incorrect password!'})
+            alert('Incorrect password!')
+            return
+        }
+        res.json({ user: userData, message: 'Login successful!'})
+    }).catch(err => res.status(500).json(err))
+})
 
 //DELETE user by id
 router.delete('/:id', (req, res) => {
