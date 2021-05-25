@@ -2,114 +2,109 @@ const { Pose } = require('../models')
 
 const poseData = [
     {
-        title: 'Boat Pose',
+        pose_name: 'Boat Pose',
         difficulty: 'Beginner',
-        target_group: []
+        target_group: [1]
     },
     {
-        title: 'Bridge Pose',
-        difficulty: 'Beginner',
-        target_group_id: []
-    },
-    {
-        title: 'Crow Pose',
+        pose_name: 'Crow Pose',
         difficulty: 'Intermidiate',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Triangle Pose',
+        pose_name: 'Triangle Pose',
         difficulty: 'Intermidiate',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'King Pigeon Pose',
+        pose_name: 'King Pigeon Pose',
         difficulty: 'Advanced',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Half Frog Pose',
+        pose_name: 'Half Frog Pose',
         difficulty: 'Advanced',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Chair Pose',
+        pose_name: 'Chair Pose',
         difficulty: 'Beginner',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Child Pose',
+        pose_name: 'Child Pose',
         difficulty: 'Beginner',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Heron Pose',
+        pose_name: 'Heron Pose',
         difficulty: 'Intermidiate',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Garland Pose',
+        pose_name: 'Garland Pose',
         difficulty: 'Intermidiate',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'One Legged king Pigeon',
+        pose_name: 'One Legged king Pigeon',
         difficulty: 'Advanced',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Noose Pose',
+        pose_name: 'Noose Pose',
         difficulty: 'Advanced',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Downward Facing Dog',
+        pose_name: 'Downward Facing Dog',
         difficulty: 'Beginner',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Dolphin Pose',
+        pose_name: 'Dolphin Pose',
         difficulty: 'Beginner',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Supported Headstand',
+        pose_name: 'Supported Headstand',
         difficulty: 'Intermidiate',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Side Crow Pose',
+        pose_name: 'Side Crow Pose',
         difficulty: 'Advanced',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Eight Angle Pose',
+        pose_name: 'Eight Angle Pose',
         difficulty: 'Advanced',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Cat Pose',
+        pose_name: 'Cat Pose',
         difficulty: 'Beginner',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Cow Pose',
+        pose_name: 'Cow Pose',
         difficulty: 'Beginner',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Bridge Pose',
+        pose_name: 'Bridge Pose',
         difficulty: 'Beginner',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Cobra Pose',
+        pose_name: 'Cobra Pose',
         difficulty: 'Intermidiate',
-        target_group_id: []
+        target_group_id: [1]
     },
     {
-        title: 'Half Lord Of The Fishes Pose',
+        pose_name: 'Half Lord Of The Fishes Pose',
         difficulty: 'Advanced',
-        target_group_id: []
+        target_group_id: [1]
     }
     // ,
     // {
