@@ -1,6 +1,7 @@
 const Comment = require('./Comment');
 const Pose = require('./Pose');
 const User = require('./User');
+const TargetGroup = require('./TargetGroup')
 
 
 //create associations
@@ -10,13 +11,18 @@ User.hasMany(Pose, {
     foreignKey: 'user_id'
 });
 
-//user has many comments
-User.hasMany(Comment, {
+// pose belongs to one user MANY TO ONE RELATIONSHIP
+Pose.belongsTo(User, {
     foreignKey: 'user_id'
-})
+});
 
 //comments belong to user
 Comment.belongsTo(User, {
+    foreignKey: 'user_id'
+})
+
+//user has many comments
+User.hasMany(Comment, {
     foreignKey: 'user_id'
 })
 
@@ -25,13 +31,9 @@ Comment.belongsTo(Pose, {
     foreignKey: 'pose_id'
 })
 
-//poses have many users
-Pose.hasMany(User, {
-    foreignKey: 'pose_id'
-})
 //poses have many comments
 Pose.hasMany(Comment, {
     foreignKey: 'pose_id'
-})
+});
 
-module.exports = { Pose, User, Comment };
+module.exports = { Pose, User, Comment, TargetGroup };

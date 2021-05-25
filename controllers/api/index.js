@@ -7,3 +7,4 @@ router.use('/poses', poseRoutes);
 router.use('/users', userRoutes);
 
 module.exports = router;
+

@@ -12,20 +12,24 @@ Comment.init({
     comment_text: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate: {len: [10]}
+       // validate: {len: [10]}
     },
     pose_id: {
+        type: DataTypes.INTEGER,
         references: {
             model: 'pose',
             key: 'id'
         }
     },
     user_id: {
+        type: DataTypes.INTEGER,
         references: {
             model: 'user',
             key: 'id'
         }
     },
+},
+{
         sequelize,
         freezeTableName: true,
         underscored: true,
