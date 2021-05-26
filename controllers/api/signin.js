@@ -1,22 +1,22 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
+// var LocalStrategy = require('passport-local').Strategy;
 
-var User = require('../models/register');
+// var User = require('../models/register');
 /* GET home page. */
 
-const redirectTodashboard = (req, res, next) => {
-  console.log(req.session);
-  if(!req.session.passport) {
-      next();
-  } else {
-      res.redirect('/dashboard');
-  }
-}
+// const redirectTodashboard = (req, res, next) => {
+//   console.log(req.session);
+//   if(!req.session.passport) {
+//       next();
+//   } else {
+//       res.redirect('/dashboard');
+//   }
+// }
 
 router.get('/', redirectTodashboard, function (req, res, next) {
-  res.render('index');
+  res.render('signin');
 });
 
 passport.serializeUser(function (user, done) {
