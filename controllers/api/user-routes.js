@@ -56,7 +56,6 @@ router.post('/', (req,res) => {
 });
 
 //login a user
-//change route to dashboard?
 router.post('/login', (req, res) => {
     User.findOne({
         where: {username: req.body.username}
@@ -70,6 +69,11 @@ router.post('/login', (req, res) => {
             alert('Incorrect password!')
             return
         }
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.username = userData.username;
+            req.session.loggedIn = true;
+        })
         res.json({ user: userData, message: 'Login successful!'})
     }).catch(err => res.status(500).json(err))
 })
