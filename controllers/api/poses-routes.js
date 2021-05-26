@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const isLoggedIn = require('../../utils/auth')
 const { Pose } = require('../../models');
 
 
