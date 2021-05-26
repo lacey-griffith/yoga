@@ -106,6 +106,17 @@ const poseData = [
         difficulty: 'Advanced',
         target_group_id: [1]
     }
+    // ,
+    // {
+    //     title: '',
+    //     difficulty: '',
+    //     target_group_id: []
+    // },
+    // {
+    //     title: '',
+    //     difficulty: '',
+    //     target_group_id: []
+    // }
 ]
 
 const seedPoses = () => Pose.bulkCreate(poseData);

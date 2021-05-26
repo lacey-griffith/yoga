@@ -26,6 +26,23 @@ router.get('/:id', (req,res) => {
     .catch(err => res.status(500).json(err))
 });
 
+//UPDATE user information
+router.put('/:id', (req, res) => {
+    User.update(req.body, {
+        individualHooks: true,
+        where: {
+            id: req.params.id
+        }
+    }).then(userData => {
+        if(!userData[0]){
+            res.status(404).json({message: 'No user found, try again!'})
+            return
+        }
+        res.json(userData)
+    })
+    .catch(err => res.status(500).json(err))
+});
+
 //POST new user
 router.post('/', (req,res) => {
     User.create({
@@ -37,21 +54,23 @@ router.post('/', (req,res) => {
     .catch(err => res.status(500).json(err))
 });
 
-//UPDATE user
-router.put('/:id', (req, res) => {
-    User.update(req.body, {
-        where: {
-            id: req.params.id
-        }
+//login a user
+//change route to dashboard?
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: {username: req.body.username}
     }).then(userData => {
-        console.log(userData)
-        if(!userData[0]){
-            res.status(404).json({message: 'User not found.'})
+        if(!userData){
+            res.status(404).json('User not found.')
+        }
+        const correctPw = userData.pwCheck(req.body.password)
+        if(!correctPw){
+            res.status(400).json({message: 'Incorrect password!'})
+            alert('Incorrect password!')
             return
         }
-        res.json(userData)
-    })
-    .catch(err => res.status(500).json(err))
+        res.json({ user: userData, message: 'Login successful!'})
+    }).catch(err => res.status(500).json(err))
 })
 
 //DELETE user by id
