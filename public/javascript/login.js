@@ -20,7 +20,7 @@ async function login (event) {
             headers: {'Content-Type': 'application/json'}
         })
         if(res.ok){
-            alert('You are logged in!')
+            document.location.replace('/dashboard/')
         } else {
             alert('Incorrect username or password')
             console.log(res.statusText)
