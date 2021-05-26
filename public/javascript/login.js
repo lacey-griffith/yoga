@@ -1,9 +1,3 @@
-//login form event listener
-//collect username and password from form
-//if both have value
-//send fetch 'post' with username and password to api/users/login
-//redirect user to dashboard
-//
 async function login (event) {
     event.preventDefault();
 
@@ -28,6 +22,29 @@ async function login (event) {
     }
 }
 
+async function signUp(event){
+    event.preventDefault();
+
+    const username = document.querySelector('#username-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
+
+    if(username && password){
+        const res = await fetch('/api/users', {
+            method: 'POST',
+            body: JSON.stringify({
+                username,
+                password
+            }),
+            headers: {'Content-Type': 'application/json'}
+        })
+        if(res.ok){
+            document.location.replace('/dashboard/')
+        } else {
+            alert('Invalid username or password, try again!')
+            console.log(res.statusText)
+        }
+    }
+}
 //signup form event listener
 //collect username and password from form
 //if both have value
@@ -37,3 +54,4 @@ async function login (event) {
 
 
 document.querySelector('#login').addEventListener('submit', login)
+document.querySelector('#signup').addEventListener('submit', signUp)
