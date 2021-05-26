@@ -4,8 +4,7 @@
     --grayblue: #576066;
     --darkgreen: #2c514c;
     --darkblueish: #122932;
-    --teal: #58b8b2;
-
+    --newteal: #58b8b1;
 }
 
 * body, html, main {
@@ -22,4 +21,9 @@
 header h1 {
     margin: 0;
     padding: 0;
+}
+
+.btn-info {
+    background-color: var(--newteal) !important;
+    border-color: var(--newteal) !important;
 }
