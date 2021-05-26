@@ -1,6 +1,9 @@
-//create a user validation function
-//if user is not logged in
-//redirect to login page
-//otherwise go to next()
+const isLoggedIn = (req, res, next) => {
+   if(!req.sesssion.user_id) {
+    res.redirect('/login')
+} else {
+    next()
+}
+}
 
-//module.exports = *function*;
+module.exports = isLoggedIn
