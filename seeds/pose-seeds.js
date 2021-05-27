@@ -14,32 +14,32 @@ const poseData = [
     {
         pose_name: 'Triangle Pose',
         difficulty: 'Intermidiate',
-        target_group_id: [1]
+        target_group_id: [2]
     },
     {
         pose_name: 'King Pigeon Pose',
         difficulty: 'Advanced',
-        target_group_id: [1]
+        target_group_id: [2]
     },
     {
         pose_name: 'Half Frog Pose',
         difficulty: 'Advanced',
-        target_group_id: [1]
+        target_group_id: [3]
     },
     {
         pose_name: 'Chair Pose',
         difficulty: 'Beginner',
-        target_group_id: [1]
+        target_group_id: [3]
     },
     {
         pose_name: 'Child Pose',
         difficulty: 'Beginner',
-        target_group_id: [1]
+        target_group_id: [4]
     },
     {
         pose_name: 'Heron Pose',
         difficulty: 'Intermidiate',
-        target_group_id: [1]
+        target_group_id: [4]
     },
     {
         pose_name: 'Garland Pose',

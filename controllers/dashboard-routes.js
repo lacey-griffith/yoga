@@ -9,9 +9,7 @@ router.get('/', (req, res) => {
         }).then(targetData => {
 
         const target = targetData.map(target => target.get({ plain: true }))
-            console.log(target)
         res.render('dashboard', { target })
-        
     
     }).catch(err => {
             console.log(err);
@@ -19,19 +17,20 @@ router.get('/', (req, res) => {
           });
 });
 
-router.get('/api/target_groups', (req, res) => {
-    TargetGroup.findAll({
+router.get('/poses/:targetId', (req, res) => {
+    Pose.findAll({
         where: {
             //req.params.id? unsure on this query
-            id: req.params.id
+            target_group_id: req.params.id
         },
+        attributes: ['pose_name', 'difficulty'],
         include: {
-            model: Pose,
-            attributes: ['pose_name', 'difficulty', 'target_group']
+            model: TargetGroup,
+            attributes: ['target_group']
         }
         })
         .then(searchResults => {
-            console.log(searchResults)
+            console.log(searchResults, 'dashboard routes line 34')
             //const searchRes = searchResults.map(result => result.get({ plain: true}))
             //res.render()
         })

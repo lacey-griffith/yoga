@@ -53,10 +53,19 @@ body {
     --newteal: #58b8b1;
 }
 
+
 * body, html, main {
     background-color: var(--darkpurple);
     margin: 0;
 }
+
+.dashboard-wall {
+    background-image: url('../images/NamasteFit_Blank.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
 .jumbotron1 {
     background-color: var(--darkpurple);
     font-family:'Pacifico', cursive;
@@ -68,6 +77,14 @@ body {
 .btn-info {
     background-color: var(--newteal) !important;
     border-color: var(--newteal) !important;
+    margin-top: 10px;
+    color: white !important;
+}
+.dropdown {
+  opacity: 100%;
+}
+.container {
+  margin-top: 100px;
 }
 #logout, #dashboard, #saved-poses {
     float: right;
@@ -75,6 +92,12 @@ body {
     margin-top: 10px;
     font-size: 20px;
     padding: 0 5px;
-    margin: 5px;
+    margin: 8px;
     font-weight: lighter;
 }
+/* DROP DOWN MENU */
+#dropdown div {
+  align-items: center;
+
+}
+/* CARDS */
