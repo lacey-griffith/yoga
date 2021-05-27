@@ -8,6 +8,20 @@ router.get('/', (req, res) => {
     res.render('dashboard')
 });
 
+router.get('/api/target_groups', (req, res) => {
+    TargetGroup.findAll({
+        where: {
+            //req.params.id? unsure on this query
+            id: req.params.id
+        },
+        include: {
+            model: Pose,
+            attributes: ['pose_name','difficulty','target_group']
+        }
+    }).then(searchResults => {
+        console.log(searchResults)
+    }).catch(err => res.status(500).json(err))
+})
 
 
 module.exports = router;
