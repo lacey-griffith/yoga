@@ -59,7 +59,7 @@ body {
     margin: 0;
 }
 
-* body {
+.dashboard-wall {
     background-image: url('../images/NamasteFit_Blank.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
