@@ -78,6 +78,17 @@ router.post('/login', (req, res) => {
     }).catch(err => res.status(500).json(err))
 })
 
+//logout a user
+router.post('/logout', (req, res) => {
+    if(req.session.loggedIn){
+        req.session.destroy(() => {
+            res.status(204).end();
+        })
+    } else {
+        res.status(204).end();
+    }
+})
+
 //DELETE user by id
 router.delete('/:id', (req, res) => {
     User.destroy({
