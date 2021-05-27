@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 
         const target = targetData.map(target => target.get({ plain: true }))
             console.log(target)
-        res.render('dashboard',  target )
+        res.render('dashboard', { target })
         
     
     }).catch(err => {
