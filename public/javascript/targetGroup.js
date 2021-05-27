@@ -1,11 +1,21 @@
-async function findThatTargetGroup(event) {
+ async function findTargetGroup(event) {
     event.preventDefault();
     
-    const targetGroup = document.querySelector('.dropdown-value').value;
+    const target = document.querySelector('#dropdown-item-text').innerText
+    
+    const response = await fetch('/api/targetgroups/card', {
+        method: 'post',
+        body: JSON.stringify({
+            target
 
-    console.log(targetGroup)
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+          }
+    })
+    console.log(response)
 
 
 }
 
-document.querySelector('.dropdown-value').addEventListener('submit', findThatTargetGroup);
+document.querySelector('.dropdown-menu').addEventListener('click', findTargetGroup);
