@@ -57,13 +57,14 @@ body {
 * body, html, main {
     background-color: var(--darkpurple);
     margin: 0;
+}
+
+* body {
     background-image: url('../images/NamasteFit_Blank.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
 }
-
-
 
 .jumbotron1 {
     background-color: var(--darkpurple);
