@@ -45,12 +45,7 @@ async function signUp(event){
         }
     }
 }
-//signup form event listener
-//collect username and password from form
-//if both have value
-//send fetch 'post' to api/users to add new user
-//redirect new user to their dashboard
-//
+
 
 
 document.querySelector('#login').addEventListener('submit', login)

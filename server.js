@@ -19,9 +19,9 @@ const sess = {
     db: sequelize
   })
 }
-
+const hbs = exphbs.create({ helpers }); 
 // Setting handlebars as default template engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
@@ -36,5 +36,3 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
-
-
