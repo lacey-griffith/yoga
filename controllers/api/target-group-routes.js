@@ -44,6 +44,7 @@ router.post('/card', (req, res) => {
         }
         })
         .then(searchResults => {
+            console.log('FROM TARGET GROUP ROUTES')
             console.log(searchResults)
             //const searchRes = searchResults.map(result => result.get({ plain: true}))
             //res.render()

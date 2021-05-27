@@ -7,30 +7,35 @@ const {User, Pose, TargetGroup, Comment} = require('../models');
 router.get('/', (req, res) => {
     TargetGroup.findAll({
         }).then(targetData => {
-
+            console.log('+++++++++')
+            console.log(targetData)
+            console.log('+++++++++')
         const target = targetData.map(target => target.get({ plain: true }))
         res.render('dashboard', { target })
-        
+        //console.log(target)
     
     }).catch(err => {
+            console.log('=========')
             console.log(err);
+            console.log('=========')
             res.status(500).json(err);
           });
 });
 
-router.get('/target_groups', (req, res) => {
-    TargetGroup.findAll({
+router.get('/poses/:targetId', (req, res) => {
+    Pose.findAll({
         where: {
             //req.params.id? unsure on this query
-            target_group: req.params.target_group
+            target_group_id: req.params.id
         },
+        attributes: ['pose_name', 'difficulty'],
         include: {
-            model: Pose,
-            attributes: ['pose_name', 'difficulty']
+            model: TargetGroup,
+            attributes: ['target_group']
         }
         })
         .then(searchResults => {
-            console.log(searchResults)
+            console.log(searchResults, 'dashboard routes line 34')
             //const searchRes = searchResults.map(result => result.get({ plain: true}))
             //res.render()
         })
