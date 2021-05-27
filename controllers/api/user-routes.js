@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const isLoggedIn = require('../../utils/auth')
 const { User } = require('../../models');
+const passport = require('passport');
 
 
 //GET all users
