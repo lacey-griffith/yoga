@@ -80,7 +80,12 @@ body {
     margin-top: 10px;
     color: white !important;
 }
-
+.dropdown {
+  opacity: 100%;
+}
+.container {
+  margin-top: 100px;
+}
 #logout, #dashboard, #saved-poses {
     float: right;
     width: 15%;
@@ -90,4 +95,9 @@ body {
     margin: 8px;
     font-weight: lighter;
 }
+/* DROP DOWN MENU */
+#dropdown div {
+  align-items: center;
 
+}
+/* CARDS */
