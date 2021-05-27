@@ -40,8 +40,5 @@ Pose.hasMany(Comment, {
 //     foreignKey: 'target_group_id'
 // })
 
-Pose.hasMany(TargetGroup, {
-    foreignKey: 'target_group_id'
-})
 
 module.exports = { Pose, User, Comment, TargetGroup };
