@@ -1,3 +1,22 @@
+async function findTargetGroup(target) {
+    event.preventDefault();
+
+    console.log(target)
+
+    const response = await fetch('/api/targetgroups/selected', {
+        method: 'POST',
+        body: JSON.stringify({
+            target
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+          }
+    })
+    if(response.ok){
+        console.log(response)
+        console.log('success')
+    }
+}
 //  async function findTargetGroup(event) {
 //     event.preventDefault();
 
@@ -27,13 +46,7 @@ $('#dropdown-list li a').on('click', function(){
     //store value of selected target group (ex: Abs) into target variable
     const target = $(this).text();
 
-    //set queryURL
-    const query = '/api/targetgroups'
-    console.log(target)
-
-    fetch(query)
-    }).then(res => {
-        console.log(res, 'line 36')
+    findTargetGroup(target);
 });
 
 //document.querySelector('.dropdown-menu').addEventListener('click', findTargetGroup);

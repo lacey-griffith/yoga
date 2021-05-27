@@ -10,6 +10,16 @@ router.get('/', (req, res) => {
     .catch(err => res.status(500).json(err))
 });
 
+//get target group by name
+// router.post('/selected', (req, res) => {
+//     TargetGroup.findAll({
+//         where: {
+//             target_group: req.params.target_group
+//         }
+//     }).then(targetData => res.json(targetData))
+//     .catch(err => res.status(500).json(err))
+// });
+
 //get target group by id
 router.get('/:id', (req,res) => {
     TargetGroup.findOne({
