@@ -46,6 +46,5 @@ async function signUp(event){
     }
 }
 
-
 document.querySelector('#login').addEventListener('submit', login)
 document.querySelector('#signup').addEventListener('submit', signUp)
