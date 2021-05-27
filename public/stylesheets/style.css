@@ -98,6 +98,11 @@ body {
 /* DROP DOWN MENU */
 #dropdown div {
   align-items: center;
-
 }
+
+.row, .dropdown {
+  display: flex !important;
+  align-items: center !important;
+}
+
 /* CARDS */
