@@ -77,15 +77,27 @@ body {
 .btn-info {
     background-color: var(--newteal) !important;
     border-color: var(--newteal) !important;
+    margin-top: 10px;
+    color: white !important;
 }
-
+.dropdown {
+  opacity: 100%;
+}
+.container {
+  margin-top: 100px;
+}
 #logout, #dashboard, #saved-poses {
     float: right;
     width: 15%;
     margin-top: 10px;
     font-size: 20px;
     padding: 0 5px;
-    margin: 5px;
+    margin: 8px;
     font-weight: lighter;
 }
+/* DROP DOWN MENU */
+#dropdown div {
+  align-items: center;
 
+}
+/* CARDS */
