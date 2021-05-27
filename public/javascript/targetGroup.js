@@ -1,25 +1,5 @@
-async function findTargetGroup(target) {
-    event.preventDefault();
-
-    console.log(target)
-
-    const response = await fetch('/api/targetgroups/selected', {
-        method: 'POST',
-        body: JSON.stringify({
-            target
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-          }
-    })
-    if(response.ok){
-        console.log(response)
-        console.log('success')
-    }
-}
 //  async function findTargetGroup(event) {
 //     event.preventDefault();
-
 
 //     const target = document.querySelector('#dropdown-item-text').innerText
 //     console.log('=====')
@@ -40,6 +20,26 @@ async function findTargetGroup(target) {
 //         console.log(target, 'line 20')
 //     })
 // }
+async function findTargetGroup(target) {
+    event.preventDefault();
+
+    console.log(target)
+
+    const response = await fetch('/api/targetgroups/selected', {
+        method: 'POST',
+        body: JSON.stringify({
+            target
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+          }
+    })
+    if(response.ok){
+        console.log(response)
+        console.log('success')
+    }
+}
+
 
 $('#dropdown-list li a').on('click', function(){
     event.preventDefault();
