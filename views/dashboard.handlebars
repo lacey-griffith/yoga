@@ -1,7 +1,10 @@
 <section class="dashboard-wall">
+  {{!-- dropdown menu for target group selecting --}}
+  <div class='container'>
+    <div class='row '>
 <div class="dropdown" id="dropdown" >
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
+    Choose an area of focus:
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
       {{#each target as |targetGroup|}}
@@ -9,15 +12,25 @@
         <a class="dropdown-item"  href="">
             <span id="dropdown-item-text" class="dropdown-item-text">{{this.target_group}}</span></a>
     </li>
-    {{/each}}
+      {{/each}}
   </ul>
-
 </div>
+</div>
+</div>
+
+
 <div class="container poses">
+  <div class='row'>
+
+    
+  {{!-- this determines how many cards display --}}
+    {{#each .}}
      {{> yoga-poses targetGroup}}
+     {{/each}}
+     
+  </div>
 </div>
 </section>
-
 <div class="w3-sidebar w3-bar-block w3-collapse w3-card" style="width:200px;" id="mySidebar">
   <button class="w3-bar-item w3-button w3-hide-large"
   onclick="w3_close()">Close & times;</button>

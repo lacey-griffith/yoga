@@ -7,17 +7,12 @@ const {User, Pose, TargetGroup, Comment} = require('../models');
 router.get('/', (req, res) => {
     TargetGroup.findAll({
         }).then(targetData => {
-            console.log('+++++++++')
-            console.log(targetData)
-            console.log('+++++++++')
+
         const target = targetData.map(target => target.get({ plain: true }))
         res.render('dashboard', { target })
-        //console.log(target)
     
     }).catch(err => {
-            console.log('=========')
             console.log(err);
-            console.log('=========')
             res.status(500).json(err);
           });
 });
