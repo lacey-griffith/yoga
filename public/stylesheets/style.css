@@ -44,3 +44,37 @@ body {
 }
 
 /*Navbar end*/
+:root {
+    --lightpink: #e3c0d3;
+    --darkpurple: #71697A;
+    --grayblue: #576066;
+    --darkgreen: #2c514c;
+    --darkblueish: #122932;
+    --newteal: #58b8b1;
+}
+
+* body, html, main {
+    background-color: var(--darkpurple);
+    margin: 0;
+}
+.jumbotron1 {
+    background-color: var(--darkpurple);
+    font-family:'Pacifico', cursive;
+    color: #ffffff;
+    padding: 0 10px 0 10px;
+    text-align: center;
+}
+
+.btn-info {
+    background-color: var(--newteal) !important;
+    border-color: var(--newteal) !important;
+}
+#logout, #dashboard, #saved-poses {
+    float: right;
+    width: 15%;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 0 5px;
+    margin: 5px;
+    font-weight: lighter;
+}

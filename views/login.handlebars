@@ -1,7 +1,9 @@
-
-    <div class="custom-container">
-        <div class="jumbotron">
-            <br>
+        <header class= 'jumbotron1'>
+            <img src='./images/Namaste Fit 1.png'/>
+            </header>
+<div class="custom-container">
+        <div class="jumbotron1">
+            <br />
             {{#if success}}
             <div class="alert alert-success alert-dismissible fade show">
                 <strong>{{success}}</strong>
@@ -14,14 +16,17 @@
                 <button class="close" data-dismiss="alert"><span>&times;</span></button>
             </div>
             {{/if}}
-
+            <br />
+            <div class='row'>
+            <div class ="col">
+                <h3>Login</h3>
             <form action="" id="login" method="POST">
                 <div class="form-group">
-                    <label for="email">Username<span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" name="username" id="email" placeholder="Enter your email id">
+                    <label for="username"><span class="text-danger"></span></label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Enter your username">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password<span class="text-danger">*</span></label>
+                    <label for="password"><span class="text-danger"></span></label>
                     <input type="password" class="form-control" name="password" id="password" placeholder="Enter Your Password">
                 </div>
                 <div class="form-group">
@@ -29,12 +34,28 @@
                 </div>
         
             </form>
+            </div>
+            <!-- added sign up form -->
+            <div class='col'>
+                <h3>New user? Sign up!</h3>
+            <form action="" id="signup" method="POST">
+                <div class="form-group">
+                    <label for="username"><span class="text-danger"></span></label>
+                    <input type="text" class="form-control" name="username" id="username-signup" placeholder="Create your username">
+                </div>
+                <div class="form-group">
+                    <label for="password"><span class="text-danger"></span></label>
+                    <input type="password" class="form-control" name="password" id="password-signup" placeholder="Create Your Password">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="SignUp" class="btn btn-block btn-info">
+                </div>
+        
+            </form>
+            </div>
+            </div>
         </div>
     </div>
-{{!-- <script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script> --}}
-<script>
-    setTimeout(() => {
-        $('.alert').remove();
-    }, 3000)
-</script>
+
+
+<script src='/javascript/login.js'></script>
