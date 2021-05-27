@@ -23,7 +23,7 @@
 async function findTargetGroup(target) {
     event.preventDefault();
 
-    console.log(target)
+    target = target.trim()
 
     const response = await fetch('/api/targetgroups/selected', {
         method: 'POST',
