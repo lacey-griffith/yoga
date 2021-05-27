@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const isLoggedIn = require('../../utils/auth')
 const { User } = require('../../models');
+const passport = require('passport');
 
 
 //GET all users
@@ -76,6 +77,17 @@ router.post('/login', (req, res) => {
         })
         res.json({ user: userData, message: 'Login successful!'})
     }).catch(err => res.status(500).json(err))
+})
+
+//logout a user
+router.post('/logout', (req, res) => {
+    if(req.session.loggedIn){
+        req.session.destroy(() => {
+            res.status(204).end();
+        })
+    } else {
+        res.status(204).end();
+    }
 })
 
 //DELETE user by id
