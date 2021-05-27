@@ -7,10 +7,18 @@
     --newteal: #58b8b1;
 }
 
+
 * body, html, main {
     background-color: var(--darkpurple);
     margin: 0;
+    background-image: url('../images/NamasteFit_Blank.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
 }
+
+
+
 .jumbotron1 {
     background-color: var(--darkpurple);
     font-family:'Pacifico', cursive;
@@ -27,3 +35,4 @@ header h1 {
     background-color: var(--newteal) !important;
     border-color: var(--newteal) !important;
 }
+
