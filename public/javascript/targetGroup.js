@@ -1,7 +1,7 @@
  async function findTargetGroup(event) {
     event.preventDefault();
     
-    const target = document.querySelector('#dropdown-item-text8').innerText
+    const target = document.querySelector('#dropdown-item-text').innerText
     console.log('=====')
     console.log(target)
     console.log('=====')
