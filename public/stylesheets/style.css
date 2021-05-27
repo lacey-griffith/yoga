@@ -77,6 +77,8 @@ body {
 .btn-info {
     background-color: var(--newteal) !important;
     border-color: var(--newteal) !important;
+    margin-top: 10px;
+    color: white !important;
 }
 
 #logout, #dashboard, #saved-poses {
@@ -85,7 +87,7 @@ body {
     margin-top: 10px;
     font-size: 20px;
     padding: 0 5px;
-    margin: 5px;
+    margin: 8px;
     font-weight: lighter;
 }
 

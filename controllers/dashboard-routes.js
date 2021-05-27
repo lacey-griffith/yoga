@@ -19,15 +19,11 @@ router.get('/', (req, res) => {
           });
 });
 
-router.get('/api/target_groups', (req, res) => {
-    TargetGroup.findAll({
+router.get('/api/poses', (req, res) => {
+    Pose.findAll({
         where: {
             //req.params.id? unsure on this query
-            id: req.params.id
-        },
-        include: {
-            model: Pose,
-            attributes: ['pose_name', 'difficulty', 'target_group']
+            target_id: req.params.id
         }
         })
         .then(searchResults => {
