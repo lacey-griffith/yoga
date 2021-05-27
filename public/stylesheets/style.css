@@ -23,9 +23,9 @@
     background-color: var(--newteal) !important;
     border-color: var(--newteal) !important;
 }
-#logout, #dashboard {
+#logout, #dashboard, #saved-poses {
     float: right;
-    width: 10%;
+    width: 15%;
     margin-top: 10px;
     font-size: 20px;
     padding: 0 5px;
