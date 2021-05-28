@@ -26,7 +26,9 @@ router.get('/', (req, res) => {
 
     }).then(targetData => {
         const target = targetData.map(target => target.get({ plain: true }))
+        console.log('====dashboard-routes====')
         console.log(target[0])
+        console.log('====dashboard-routes====')
         res.render('dashboard', { target })
     
     }).catch(err => {

@@ -20,6 +20,11 @@ router.get('/:id', (req,res) => {
     TargetGroup.findOne({
         where: {
             id: req.params.id
+        },
+        attributes: ['id','target_group'],
+        include: {
+            model: Pose,
+            attributes: ['id','pose_name','difficulty','target_group_id']
         }
 }).then(targetData => {
     if(!targetData){
