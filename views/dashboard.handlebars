@@ -1,22 +1,24 @@
 <section class="dashboard-wall">
   {{!-- dropdown menu for target group selecting --}}
   <div class='container'>
-    <div class='row '>
-<div class="dropdown" id="dropdown" >
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Choose an area of focus:
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id='dropdown-list'>
-      {{#each target as |targetGroup|}}
-    <li class="dropdown-value">
-        <a class="dropdown-item"  href="">
-            <span id="dropdown-item-text" class="dropdown-item-text">{{this.target_group}}</span></a>
-    </li>
-      {{/each}}
-  </ul>
-</div>
-</div>
-</div>
+    <div class='row'>
+      <div class="col-xs-12 center-block text-center">
+        <div class="dropdown" id="dropdown" >
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Choose an area of focus:
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id='dropdown-list'>
+            {{#each target as |targetGroup|}}
+          <li class="dropdown-value">
+              <a class="dropdown-item"  href="">
+                  <span id="dropdown-item-text" class="dropdown-item-text">{{this.target_group}}</span></a>
+          </li>
+            {{/each}}
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <div class="container poses">
