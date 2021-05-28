@@ -21,9 +21,8 @@
 //     })
 // }
 async function findTargetGroup(target) {
-    event.preventDefault();
-
     console.log(target)
+
 
     const response = await fetch('/api/targetgroups/selected', {
         method: 'POST',
@@ -41,10 +40,10 @@ async function findTargetGroup(target) {
 }
 
 
-$('#dropdown-list li a').on('click', function(){
+$('#dropdown-list li a').on('click', function(event){
     event.preventDefault();
     //store value of selected target group (ex: Abs) into target variable
-    const target = $(this).text();
+    const target = $(this).text().trim()
 
     findTargetGroup(target);
 });

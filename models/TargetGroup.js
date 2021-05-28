@@ -18,6 +18,10 @@ TargetGroup.init({
     },
     pose_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'pose',
+        key: 'id'
+      }
     }
 },
 {

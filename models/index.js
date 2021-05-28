@@ -16,29 +16,17 @@ Pose.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-//comments belong to user
-Comment.belongsTo(User, {
-    foreignKey: 'user_id'
-})
-
-//user has many comments
-User.hasMany(Comment, {
-    foreignKey: 'user_id'
-})
-
-//comments belong to pose
-Comment.belongsTo(Pose, {
-    foreignKey: 'pose_id'
-})
-
 //poses have many comments
 Pose.hasMany(Comment, {
     foreignKey: 'pose_id'
 });
 
-// Pose.belongsTo(TargetGroup, {
-//     foreignKey: 'target_group_id'
-// })
+TargetGroup.belongsTo(Pose, {
+    foreignKey: 'pose_id'
+})
 
+Pose.hasMany(TargetGroup, {
+    foreignKey: 'pose_id'
+})
 
 module.exports = { Pose, User, Comment, TargetGroup };

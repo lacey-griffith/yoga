@@ -11,14 +11,20 @@ router.get('/', (req, res) => {
 });
 
 //get target group by name
-// router.post('/selected', (req, res) => {
-//     TargetGroup.findAll({
-//         where: {
-//             target_group: req.params.target_group
-//         }
-//     }).then(targetData => res.json(targetData))
-//     .catch(err => res.status(500).json(err))
-// });
+router.post('/selected', (req, res) => {
+    TargetGroup.findAll({
+        where: {
+            target_group: req.body.target
+        },
+        include: {
+            model: Pose,
+            attributes: ['pose_name', 'difficulty']
+        }
+    }).then(targetData => {
+        res.json(targetData)
+    })
+    .catch(err => res.status(500).json(err))
+});
 
 //get target group by id
 router.get('/:id', (req,res) => {
@@ -27,6 +33,7 @@ router.get('/:id', (req,res) => {
             id: req.params.id
         }
 }).then(targetData => {
+    console.log(targetData)
     if(!targetData){
         res.status(404).json({message: 'Target group not found.'})
         return
