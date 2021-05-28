@@ -1,51 +1,31 @@
-//  async function findTargetGroup(event) {
-//     event.preventDefault();
-
-//     const target = document.querySelector('#dropdown-item-text').innerText
-//     console.log('=====')
-//     console.log(target)
-//     console.log('=====')
-//     const response = await fetch('/api/targetgroups', {
-//         method: 'post',
-//         body: JSON.stringify({
-//             target
-
-//         }),
-//         headers: {
-//             'Content-Type': 'application/json'
-//           }
-//     }).then(res => {
-
-//         console.log(res, 'line 19')
-//         console.log(target, 'line 20')
-//     })
-// }
-async function findTargetGroup(target) {
-    console.log(target)
-
-
-    const response = await fetch('/api/targetgroups/selected', {
-        method: 'POST',
-        body: JSON.stringify({
-            target
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-          }
-    })
-    if(response.ok){
-        console.log(response)
-        console.log('success')
-    }
-}
-
-
 $('#dropdown-list li a').on('click', function(event){
     event.preventDefault();
     //store value of selected target group (ex: Abs) into target variable
-    const target = $(this).text().trim()
+    const target_group_id = $(this).attr('id')
+    const target_group = $(this).text().trim();
+    //console.log(value)
 
-    findTargetGroup(target);
+    fetch(`/api/targetgroups/${target_group_id}`)
+    .then(res => {
+        return res.json();
+        //console.log(results)
+        //findPoses(results);
+    }).then(res => {
+        console.log(res)
+    })
 });
+
+// function findPoses(results) {
+//     const selectedTarget_id = results.id
+//     const selectedTarget_name = results.target_group
+
+//     fetch(`/api/poses`)
+//     .then(res => {
+//         return res.json();
+//     }).then(results => {
+//         console.log(results)
+//     })
+    
+// }
 
 //document.querySelector('.dropdown-menu').addEventListener('click', findTargetGroup);

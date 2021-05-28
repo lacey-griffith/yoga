@@ -5,24 +5,13 @@ const { TargetGroup, Pose } = require('../../models');
 //get all target groups
 router.get('/', (req, res) => {
     TargetGroup.findAll({
-
-    }).then(targetData => res.json(targetData))
-    .catch(err => res.status(500).json(err))
-});
-
-//get target group by name
-router.post('/selected', (req, res) => {
-    TargetGroup.findAll({
-        where: {
-            target_group: req.body.target
-        },
+        attributes: ['id','target_group'],
         include: {
             model: Pose,
-            attributes: ['pose_name', 'difficulty']
+            attributes: ['id','pose_name','difficulty','target_group_id']
         }
-    }).then(targetData => {
-        res.json(targetData)
-    })
+
+    }).then(targetData => res.json(targetData))
     .catch(err => res.status(500).json(err))
 });
 
@@ -31,6 +20,11 @@ router.get('/:id', (req,res) => {
     TargetGroup.findOne({
         where: {
             id: req.params.id
+        },
+        attributes: ['id','target_group'],
+        include: {
+            model: Pose,
+            attributes: ['id','pose_name','difficulty','target_group_id']
         }
 }).then(targetData => {
     console.log(targetData)
