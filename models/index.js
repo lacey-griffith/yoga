@@ -36,9 +36,15 @@ Pose.hasMany(Comment, {
     foreignKey: 'pose_id'
 });
 
-// Pose.belongsTo(TargetGroup, {
+// Pose.belongsTo(TargetGroup)
+
+Pose.belongsTo(TargetGroup)
+
+// TargetGroup.belongsTo(Pose, {
 //     foreignKey: 'target_group_id'
 // })
+
+TargetGroup.hasMany(Pose)
 
 
 module.exports = { Pose, User, Comment, TargetGroup };

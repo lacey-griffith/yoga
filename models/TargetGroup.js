@@ -15,9 +15,6 @@ TargetGroup.init({
      allowNull: true,
      unique: true,
      validate: { len: [1, 30] }
-    },
-    pose_id: {
-      type: DataTypes.INTEGER,
     }
 },
 {
