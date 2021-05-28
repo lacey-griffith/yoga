@@ -5,20 +5,15 @@ const { TargetGroup, Pose } = require('../../models');
 //get all target groups
 router.get('/', (req, res) => {
     TargetGroup.findAll({
+        attributes: ['id','target_group'],
+        include: {
+            model: Pose,
+            attributes: ['id','pose_name','difficulty','target_group_id']
+        }
 
     }).then(targetData => res.json(targetData))
     .catch(err => res.status(500).json(err))
 });
-
-// //get target group by name
-// router.get('/:name', (req, res) => {
-//     TargetGroup.findOne({
-//         where: {
-//             target_group: req.params.id
-//         }
-//     }).then(targetData => res.json(targetData))
-//     .catch(err => res.status(500).json(err))
-// });
 
 //get target group by id
 router.get('/:id', (req,res) => {

@@ -2,7 +2,6 @@
 
 $('#dropdown-list li a').on('click', function(){
     event.preventDefault();
-    
     //store value of selected target group (ex: Abs) into target variable
     const target_group_id = $(this).attr('id')
     const target_group = $(this).text().trim();
@@ -11,16 +10,24 @@ $('#dropdown-list li a').on('click', function(){
     fetch(`/api/targetgroups/${target_group_id}`)
     .then(res => {
         return res.json();
-    }).then(results => {
-        console.log(results)
+        //console.log(results)
+        //findPoses(results);
+    }).then(res => {
+        console.log(res)
     })
-    findTargetGroup(target_group);
 });
 
-function findTargetGroup(target_group) {
-    event.preventDefault();
+// function findPoses(results) {
+//     const selectedTarget_id = results.id
+//     const selectedTarget_name = results.target_group
 
-    console.log(target_group)
-}
+//     fetch(`/api/poses`)
+//     .then(res => {
+//         return res.json();
+//     }).then(results => {
+//         console.log(results)
+//     })
+    
+// }
 
 //document.querySelector('.dropdown-menu').addEventListener('click', findTargetGroup);
