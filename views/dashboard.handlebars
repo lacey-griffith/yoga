@@ -23,12 +23,12 @@
   </div>
 
 
-<div class="container ">
+<div class="container poses">
   {{#if target.length}}
-  <div class="row poses">
+  <div class="row" id="cards">
     {{#each target as |poses|}}
   {{!-- this determines how many cards display --}}
-     {{> yoga-poses poses}}
+     {{> yoga-poses poseInfo}}
      {{/each}}
   </div>
   {{/if}}

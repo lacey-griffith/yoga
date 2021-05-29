@@ -16,22 +16,6 @@ router.get('/', (req, res) => {
 });
 
 //get target group by id
-router.get('/:id', (req,res) => {
-    TargetGroup.findOne({
-        where: {
-            id: req.params.id
-        },
-        attributes: ['id','target_group'],
-        include: {
-            model: Pose,
-            attributes: ['id','pose_name','difficulty','target_group_id']
-        }
-}).then(targetData => {
-    const poseInfo = targetData.map(pose => pose.get({ plain: true }))
-    console.log("FFFFFFFF"+ poseInfo)
-    res.render('dashboard', { poseInfo })
-    }).catch(err => res.status(500).json(err))
-});
 
 router.post('/card', (req, res) => {
     TargetGroup.findAll({
