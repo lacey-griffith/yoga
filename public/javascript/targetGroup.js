@@ -1,4 +1,7 @@
 renderYogaPoses = (id) => {
+
+    const target_group_id = $('#dropdown-list li a').attr('id')
+    
     fetch(`/api/targetgroups/${target_group_id}`).then(res => {
         console.log(res.json)
         return res.json()
