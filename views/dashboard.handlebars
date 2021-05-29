@@ -8,12 +8,14 @@
           Choose an area of focus:
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id='dropdown-list'>
+
             {{#each target as |target|}}
           <li class="dropdown-value">
-              <a class="dropdown-item"  href="" id='{{target.id}}''>
+              <a class="dropdown-item"  href="" id="{{target.id}}">
                   <span id="dropdown-item-text" class="dropdown-item-text">{{target.target_group}}</span></a>
           </li>
             {{/each}}
+
         </ul>
         </div>
       </div>
@@ -22,13 +24,14 @@
 
 
 <div class="container poses">
-  <div class='row'>
+  {{#if target.length}}
+  <div class="row">
+    {{#each target as |poses|}}
   {{!-- this determines how many cards display --}}
-    {{#each .}}
-     {{> yoga-poses target}}
+     {{> yoga-poses poses}}
      {{/each}}
-
   </div>
+  {{/if}}
 </div>
 </section>
 

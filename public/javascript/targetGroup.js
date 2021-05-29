@@ -8,10 +8,8 @@ $('#dropdown-list li a').on('click', function(event){
     fetch(`/api/targetgroups/${target_group_id}`)
     .then(res => {
         return res.json();
-        //console.log(results)
-        //findPoses(results);
     }).then(res => {
-        console.log(res)
+        document.location.replace('/dashboard')
     })
 });
 

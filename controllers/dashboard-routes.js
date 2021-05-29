@@ -4,18 +4,6 @@ const sequelize = require('../config/connection');
 const {User, Pose, TargetGroup, Comment} = require('../models');
 
 
-// router.get('/', (req, res) => {
-//     TargetGroup.findAll({
-//         }).then(targetData => {
-//         const target = targetData.map(target => target.get({ plain: true }))
-//         res.render('dashboard', { target })
-    
-//     }).catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//           });
-// });
-
 router.get('/', (req, res) => {
     TargetGroup.findAll({
         attributes: ['id','target_group'],
@@ -26,8 +14,10 @@ router.get('/', (req, res) => {
 
     }).then(targetData => {
         const target = targetData.map(target => target.get({ plain: true }))
+        const length = target[0].poses.length
         console.log('====dashboard-routes====')
-        console.log(target[0])
+        console.log(target[1])
+        console.log(length)
         console.log('====dashboard-routes====')
         res.render('dashboard', { target })
     
@@ -37,24 +27,6 @@ router.get('/', (req, res) => {
           });
 });
 
-// router.get('/api/poses/targetgroup/:id', (req, res) => {
-//     Pose.findAll({
-//         where: {
-//             target_group_id: req.params.id 
-//         },
-//         attributes: ['pose_name', 'difficulty'],
-//         include: {
-//             model: TargetGroup,
-//             attributes: ['target_group']
-//         }
-//         })
-//         .then(searchResults => {
-//             console.log(searchResults)
-//             //const searchRes = searchResults.map(result => result.get({ plain: true}))
-//             //res.render()
-//         })
-//         .catch(err => res.status(500).json(err))
-// });
 
 
 module.exports = router;

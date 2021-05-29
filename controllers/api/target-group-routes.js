@@ -27,22 +27,11 @@ router.get('/:id', (req,res) => {
             attributes: ['id','pose_name','difficulty','target_group_id']
         }
 }).then(targetData => {
-    console.log(targetData)
-    if(!targetData){
-        res.status(404).json({message: 'Target group not found.'})
-        return
-    }
-    res.json(targetData)
+    const poseInfo = targetData.map(pose => pose.get({ plain: true }))
+    console.log("FFFFFFFF"+ poseInfo)
+    res.render('dashboard', { poseInfo })
     }).catch(err => res.status(500).json(err))
 });
-
-//create new target group
-// router.post('/', (req, res) => {
-//     TargetGroup.create({
-//         target_group: req.body.target_group
-//     }).then(targetData => res.json(targetData))
-//     .catch(err => res.status(500).json(err))
-// });
 
 router.post('/card', (req, res) => {
     TargetGroup.findAll({
