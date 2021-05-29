@@ -1,11 +1,13 @@
-renderYogaPoses = (id) => {
-
+renderYogaPoses = () => {
     const target_group_id = $('#dropdown-list li a').attr('id')
+    console.log(target_group_id)
     
     fetch(`/api/targetgroups/${target_group_id}`).then(res => {
         console.log(res.json)
         return res.json()
-    }).then(function (poses) {
+    }).then(res => {
+        const poses = res.poses
+        console.log(poses)
         for (let i = 0; i < poses.length; i++) {
             let card = `
         <div class='col-4 mt-3'>
@@ -34,3 +36,17 @@ $('#dropdown-list li a').on('click', function(event) {
     event.preventDefault()
     renderYogaPoses($(this).attr('id'))
 })
+
+
+// const target_group_id = $(this).attr('id')
+
+
+//     fetch(`/api/targetgroups/${target_group_id}`)
+//         .then(res => {
+//             return res.json();
+//             //console.log(results)
+//             //findPoses(results);
+//         }).then(res => {
+//             const poses = res.poses
+//             printPoses(poses)
+//         })
