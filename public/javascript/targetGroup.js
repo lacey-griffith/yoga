@@ -1,5 +1,5 @@
 renderYogaPoses = (id) => {
-    fetch(`/api/targetgroups/${target_group.id}`).then(res => {
+    fetch(`/api/targetgroups/${target_group_id}`).then(res => {
         console.log(res.json)
         return res.json()
     }).then(function (poses) {
