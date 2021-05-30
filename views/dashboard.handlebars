@@ -24,21 +24,11 @@
 </section>
 <section>
 <div class="container poses">
-<<<<<<< HEAD
-  {{#if target.length}}
-  <div class="row" id="cards">
-    {{#each target as |poses|}}
-  {{!-- this determines how many cards display --}}
-     {{> yoga-poses poseInfo}}
-     {{/each}}
-=======
   <div class="row" id="pose_container">
     {{#each poses as |pose|}}
   {{> yoga-poses pose}}
     {{/each}}
->>>>>>> develop
   </div>
-  {{/if}}
 </div>
 
 </section>
