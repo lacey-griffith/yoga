@@ -33,7 +33,7 @@ function printPoses(poses, target_group) {
         <p>No poses were found</p>`)
       } else {
     $('#pose_container').append(`
-    <div class='col-4 mt-3'>
+    <div class='col col-sm-auto col-md-auto col-lg-auto mt-3 mb-3 align-self-center'>
     <div class="card results-card" style="width: 18rem;">
       <img src="/images/lotusbehappy.png" class="card-img-top" alt="...">
       <div class="card-body">
