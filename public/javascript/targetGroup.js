@@ -1,3 +1,5 @@
+
+
 $('#dropdown-list li a').on('click', function() {
     let yogaPoses = $(this).attr('id')
     event.preventDefault()
@@ -6,34 +8,63 @@ $('#dropdown-list li a').on('click', function() {
 })
 
 renderYogaPoses = (yogaPoses) => {
-    console.log(`/dashboard/${yogaPoses}`)
-    fetch(`/dashboard/${yogaPoses}`)
-    .then(response => {
-        return response.json()
-    }).then(data => {
-            const card = `
-        <div class='col-4 mt-3'>
-        <div class="card results-card" style="width: 18rem;">
-          <img src="/images/lotusbehappy.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Pose Name:${data.poses.pose_name}</h5>
-            <p class="card-text">Move slowly through each pose, remembering to breathe as you move. Pause after any pose you find challenging, especially if you are short of breath, and start again when your breathing returns to normal. The idea is to hold each pose for a few, slow breaths before moving on to the next one.</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Difficulty: ${data.poses.difficulty}</li>
-            <li class="list-group-item">Targeted anatomy:${data.poses.target_group}</li>
-          </ul>
-          <div class="card-body">
-            <a href="https://www.youtube.com/results?search_query=${data.poses.pose_name}" class="card-link">Video Demo</a>
-          </div>
-        </div>
-        </div>
-    `
-    $("#cards").html("")
-    $("#cards").append(card)
-})
+
+    const response = fetch(`/dashboard/${yogaPoses}`, {
+        headers : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+           }
+    })
+    console.log(response)
+    if(response.ok){
+        document.location.reload()
+    }
 }
 
+
+// .then(data => {
+//     const card = `
+// <div class='col-4 mt-3'>
+// <div class="card results-card" style="width: 18rem;">
+//   <img src="/images/lotusbehappy.png" class="card-img-top" alt="...">
+//   <div class="card-body">
+//     <h5 class="card-title">Pose Name:${data.poses.pose_name}</h5>
+//     <p class="card-text">Move slowly through each pose, remembering to breathe as you move. Pause after any pose you find challenging, especially if you are short of breath, and start again when your breathing returns to normal. The idea is to hold each pose for a few, slow breaths before moving on to the next one.</p>
+//   </div>
+//   <ul class="list-group list-group-flush">
+//     <li class="list-group-item">Difficulty: ${data.poses.difficulty}</li>
+//     <li class="list-group-item">Targeted anatomy:${data.poses.target_group}</li>
+//   </ul>
+//   <div class="card-body">
+//     <a href="https://www.youtube.com/results?search_query=${data.poses.pose_name}" class="card-link">Video Demo</a>
+//   </div>
+// </div>
+// </div>
+// `
+// $("#cards").html("")
+// $("#cards").append(card)
+// })
+
+// const card = `
+// <div class='col-4 mt-3'>
+// <div class="card results-card" style="width: 18rem;">
+//   <img src="/images/lotusbehappy.png" class="card-img-top" alt="...">
+//   <div class="card-body">
+//     <h5 class="card-title">Pose Name:${data.poses.pose_name}</h5>
+//     <p class="card-text">Move slowly through each pose, remembering to breathe as you move. Pause after any pose you find challenging, especially if you are short of breath, and start again when your breathing returns to normal. The idea is to hold each pose for a few, slow breaths before moving on to the next one.</p>
+//   </div>
+//   <ul class="list-group list-group-flush">
+//     <li class="list-group-item">Difficulty: ${data.poses.difficulty}</li>
+//     <li class="list-group-item">Targeted anatomy:${data.poses.target_group}</li>
+//   </ul>
+//   <div class="card-body">
+//     <a href="https://www.youtube.com/results?search_query=${data.poses.pose_name}" class="card-link">Video Demo</a>
+//   </div>
+// </div>
+// </div>
+// `
+// $("#cards").html("")
+// $("#cards").append(card)
 
 // $('#dropdown-list li a').on('click', function () {
 //     event.preventDefault();
