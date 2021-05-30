@@ -1,30 +1,18 @@
-        <header class= 'jumbotron1'>
+        <header class= 'jumbotron1 pt-5 pb-5'>
             <img src='./images/Namaste Fit 1.png'/>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Amet nihil accusamus sapiente alias eum enim, saepe tempore dolor 
-                inventore veniam est reprehenderit eligendi, dolores aperiam deserunt placeat 
-                eveniet quibusdam odit.</p>
             </header>
 <div class="custom-container">
         <div class="jumbotron1">
-            <br />
-            {{#if success}}
-            <div class="alert alert-success alert-dismissible fade show">
-                <strong>{{success}}</strong>
-                <button class="close" data-dismiss="alert"><span>&times;</span></button>
-            </div>
-            {{/if}}
-            {{#if error}}
-            <div class="alert alert-danger alert-dismissible fade show">
-                <strong>{{error}}</strong>
-                <button class="close" data-dismiss="alert"><span>&times;</span></button>
-            </div>
-            {{/if}}
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Amet nihil accusamus sapiente alias eum enim, saepe tempore dolor 
+                inventore veniam est reprehenderit eligendi, dolores aperiam deserunt placeat 
+                eveniet quibusdam odit.</p>
+
             <br />
             <div class='row'>
             <div class ="col">
                 <h3>Login</h3>
-                <div id="form_container"></div>
+                <div id="login_container"></div>
             <form action="" id="login" method="POST">
                 <div class="form-group">
                     <label for="username"><span class="text-danger"></span></label>
@@ -43,6 +31,7 @@
             <!-- added sign up form -->
             <div class='col'>
                 <h3>New user? Sign up!</h3>
+                <div id="signup_container"></div>
             <form action="" id="signup" method="POST">
                 <div class="form-group">
                     <label for="username"><span class="text-danger"></span></label>

@@ -19,43 +19,46 @@ async function login (event) {
         } 
         if(res.status == 400){
             console.log('wrong password')
-            $('#form_container').html('')
-            $('#form_container').append(`
-            <div class="alert alert-danger alert-dismissible fade show">
+            $('#login_container').html('')
+            $('#login_container').append(`
+            <div class="alert alert-danger fade show">
                 <strong>Incorrect password.</strong>
             </div>
         `)
         }
         if(res.status == 404){
             console.log('wrong username')
-            $('#form_container').html('')
-            $('#form_container').append(`
-            <div class="alert alert-danger alert-dismissible fade show">
+            $('#login_container').html('')
+            $('#login_container').append(`
+            <div class="alert alert-danger fade show">
                 <strong>Incorrect username.</strong>
             </div>
         `)
         }
+        else {
+            alert(res.statusText)
+        }
     }
     if(!username){
-        $('#form_container').html('')
-        $('#form_container').append(`
-        <div class="alert alert-danger alert-dismissible fade show">
+        $('#login_container').html('')
+        $('#login_container').append(`
+        <div class="alert alert-danger fade show">
             <strong>Username is required.</strong>
         </div>
     `)
     }
     if(!password){
-        $('#form_container').html('')
-        $('#form_container').append(`
-        <div class="alert alert-danger alert-dismissible fade show">
+        $('#login_container').html('')
+        $('#login_container').append(`
+        <div class="alert alert-danger fade show">
             <strong>Password is required.</strong>
         </div>
     `)
     }
     if(!username && !password){
-        $('#form_container').html('')
-        $('#form_container').append(`
-        <div class="alert alert-danger alert-dismissible fade show">
+        $('#login_container').html('')
+        $('#login_container').append(`
+        <div class="alert alert-danger fade show">
             <strong>Please enter username and password.</strong>
         </div>
     `)
@@ -79,11 +82,61 @@ async function signUp(event){
             headers: {'Content-Type': 'application/json'}
         })
         if(res.ok){
+            console.log(res)
             document.location.replace('/dashboard/')
-        } else {
-            alert('Invalid username or password, try again!')
-            console.log(res.statusText)
         }
+        if(res.status == 500){
+            $('#signup_container').html('')
+            $('#signup_container').append(`
+            <div class="alert alert-danger fade show">
+                <strong>This username already exists.</strong>
+            </div>
+        `)
+        } else {
+            console.log(res)
+            //#signup_container
+        }
+    }
+    if(!username){
+        $('#signup_container').html('')
+        $('#signup_container').append(`
+        <div class="alert alert-danger fade show">
+            <strong>Please enter a valid username.</strong>
+        </div>
+    `)
+    }
+    if(username.length === 0){
+        $('#signup_container').html('')
+        $('#signup_container').append(`
+        <div class="alert alert-danger fade show">
+            <strong>Please enter a valid username.</strong>
+        </div>
+    `)
+    }
+    if(!password){
+        $('#signup_container').html('')
+        $('#signup_container').append(`
+        <div class="alert alert-danger fade show">
+            <strong>Please enter a valid password.</strong>
+        </div>
+    `)
+    }
+    if(password.length < 8){
+        console.log(password.length)
+        $('#signup_container').html('')
+        $('#signup_container').append(`
+        <div class="alert alert-danger fade show">
+            <strong>Password must be at least 8 characters.</strong>
+        </div>
+    `)
+    }
+    if(!username && !password){
+        $('#signup_container').html('')
+        $('#signup_container').append(`
+        <div class="alert alert-danger fade show">
+            <strong>Please enter username and password.</strong>
+        </div>
+    `)
     }
 }
 
