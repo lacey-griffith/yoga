@@ -14,37 +14,39 @@ router.get('/', (req, res) => {
 
     }).then(targetData => {
         const target = targetData.map(target => target.get({ plain: true }))
-        const length = target[0].poses.length
-        console.log('====dashboard-routes====')
+        console.log('====dashboard-routes test====')
         console.log(target[0])
-        console.log(length)
-        console.log('====dashboard-routes====')
+        console.log('====dashboard-routes test====')
         res.render('dashboard', { target })
     
     }).catch(err => {
-            console.log(err);
+            // console.log(err);
             res.status(500).json(err);
           });
 });
 
-router.get('/:id', (req,res) => {
-    TargetGroup.findAll({
-        where: {
-            id: req.params.id
-        },
-        attributes: ['id','target_group'],
-        include: {
-            model: Pose,
-            attributes: ['id','pose_name','difficulty','target_group_id']
-        }
-}).then(targetData => {
-    const poseInfo = targetData.map(poseInfo => poseInfo.get({ plain: true }))
-    for (let i = 0; i < poseInfo.length; i++) {
-        res.render('dashboard', poseInfo[i])
-        
-    }
-    }).catch(err => res.status(500).json(err))
-});
+
+// router.get('api/poses/:target_group_id', (req, res) => {
+//     Pose.findAll({
+//         where: {
+//             target_group_id: req.params.target_group_id
+//         },
+//         attributes: ['pose_name', 'difficulty'],
+//         include: {
+//             model: TargetGroup,
+//             attributes: ['target_group']
+//         }
+//         })
+//         .then(searchResults => {
+//             console.log(searchResults)
+//             const search = searchResults.map(result => result.get({ plain: true}))
+//             res.render('yoga-poses', {search})
+//         })
+//         .catch(err => {
+//             console.log(err, 'dashboard routes line 57')
+//             res.status(500).json(err)
+//         })
+// });
 
 
 module.exports = router;

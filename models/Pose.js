@@ -23,7 +23,9 @@ Pose.init({
     allowNull: false,
   },
   target_group_id: {
-    type: DataTypes.STRING,
+    type: DataTypes.INTEGER,
+    allowNull: true,
+   validate: { len: [1, 20] },
    references: {
      model: 'targetGroup',
      key: 'id'
