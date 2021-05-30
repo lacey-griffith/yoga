@@ -16,10 +16,31 @@ async function login (event) {
         if(res.ok){
             document.location.replace('/dashboard/')
         } else {
-            alert('Incorrect username or password')
-            console.log(res.statusText)
+            $('#form_container').html('')
+            $('#form_container').append(`
+            <div class="alert alert-danger alert-dismissible fade show">
+                <strong>Incorrect username or password.</strong>
+            </div>
+        `)
         }
     }
+    if(!username){
+        $('#form_container').html('')
+        $('#form_container').append(`
+        <div class="alert alert-danger alert-dismissible fade show">
+            <strong>Username is required.</strong>
+        </div>
+    `)
+    }
+    if(!password){
+        $('#form_container').html('')
+        $('#form_container').append(`
+        <div class="alert alert-danger alert-dismissible fade show">
+            <strong>Password is required.</strong>
+        </div>
+    `)
+    }
+
 }
 
 async function signUp(event){
