@@ -14,12 +14,24 @@ async function login (event) {
             headers: {'Content-Type': 'application/json'}
         })
         if(res.ok){
+            console.log(res)
             document.location.replace('/dashboard/')
-        } else {
+        } 
+        if(res.status == 400){
+            console.log('wrong password')
             $('#form_container').html('')
             $('#form_container').append(`
             <div class="alert alert-danger alert-dismissible fade show">
-                <strong>Incorrect username or password.</strong>
+                <strong>Incorrect password.</strong>
+            </div>
+        `)
+        }
+        if(res.status == 404){
+            console.log('wrong username')
+            $('#form_container').html('')
+            $('#form_container').append(`
+            <div class="alert alert-danger alert-dismissible fade show">
+                <strong>Incorrect username.</strong>
             </div>
         `)
         }
@@ -37,6 +49,14 @@ async function login (event) {
         $('#form_container').append(`
         <div class="alert alert-danger alert-dismissible fade show">
             <strong>Password is required.</strong>
+        </div>
+    `)
+    }
+    if(!username && !password){
+        $('#form_container').html('')
+        $('#form_container').append(`
+        <div class="alert alert-danger alert-dismissible fade show">
+            <strong>Please enter username and password.</strong>
         </div>
     `)
     }
