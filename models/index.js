@@ -36,8 +36,6 @@ Pose.hasMany(Comment, {
     foreignKey: 'pose_id'
 });
 
-// Pose.belongsTo(TargetGroup)
-
 Pose.belongsTo(TargetGroup)
 
 TargetGroup.hasMany(Pose)

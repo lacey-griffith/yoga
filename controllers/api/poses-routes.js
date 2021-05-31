@@ -36,24 +36,6 @@ router.get('/:id', (req, res) => {
     .catch(err => res.status(500).json(err))
 });
 
-// get poses by target group
-// router.get('/:targetgroup', (req, res) => {
-//     console.log(req)
-//     Pose.findAll({
-//         where: {
-//             target_group_id: req.params.targetgroup
-//         },
-//         include: {
-//             model: TargetGroup,
-//             attributes: ['id','target_group']
-//         }
-//     }).then(res => {
-//         res.json(res)
-//     }).catch(err => {
-//         res.status(500).json(err)
-//     })
-// })
-
 // POST new pose
 router.post('/', (req, res) => {
     Pose.create({

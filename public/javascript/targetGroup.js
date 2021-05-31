@@ -1,6 +1,5 @@
 
 $('#dropdown-list li a').on('click', function () {
-
     event.preventDefault();
     $('#pose_container').html('')
     const target_group_id = $(this).attr('id')
