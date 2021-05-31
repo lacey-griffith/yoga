@@ -49,12 +49,13 @@ li a:hover:not(.active) {
 /* dashboard styling */
 .dashboard-wall {
     width: 100%;
-    height: 625px;
-    margin-top: 40px !important;
+    height: 100vh !important;
+    margin-top: 30px !important;
     background-image: url('../images/NamasteFit_Blank.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
+
 }
 
 
@@ -98,3 +99,61 @@ li a:hover:not(.active) {
 }
 
 /* CARDS */
+
+/*footer styling*/
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.contact {
+  background-color: var(--darkpurple);
+}
+.contact h1,
+.contact-form h3 {
+  color: var(--newteal);
+  text-align: center;
+  text-decoration: underline;
+}
+form label {
+  text-decoration: underline;
+}
+.contact-us {
+  text-align:center
+}
+.contact-form input,
+.contact-form textarea {
+    border: 2px solid var(--lightpink);
+    position: center;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: var(--lightpink);
+    width: 50%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+    margin: 5px auto 10px auto;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
+}
+.contact-form button {
+  width: 25%;
+  border: none;
+  background: var(--newteal);
+  color: var(--lightpink);
+  text-align: center;
+  padding:15px 0;
+  font-size: 16px;
+  border-radius: 10px;
+}
+.contact-form button:hover {
+  color: var(--lightpink);
+  background: var(--newteal);
+}
+.contact-info a {
+  color:var(--lightpink);
+}

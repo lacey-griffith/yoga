@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const isLoggedIn = require('../../utils/auth')
 const { TargetGroup, Pose } = require('../../models');
 
 //get all target groups
@@ -35,14 +34,6 @@ router.get('/:id', (req,res) => {
     }).catch(err => res.status(500).json(err))
 });
 
-//create new target group
-// router.post('/', (req, res) => {
-//     TargetGroup.create({
-//         target_group: req.body.target_group
-//     }).then(targetData => res.json(targetData))
-//     .catch(err => res.status(500).json(err))
-// });
-
 router.post('/card', (req, res) => {
     TargetGroup.findAll({
         where: {
@@ -56,8 +47,6 @@ router.post('/card', (req, res) => {
         .then(searchResults => {
             console.log('FROM TARGET GROUP ROUTES')
             console.log(searchResults)
-            //const searchRes = searchResults.map(result => result.get({ plain: true}))
-            //res.render()
         })
         .catch(err => res.status(500).json(err))
     })

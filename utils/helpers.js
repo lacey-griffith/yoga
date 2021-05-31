@@ -7,4 +7,3 @@ module.exports = {
         return strng.replace(" ", "+")
     }
 }
-//format anything else that needs formatting :)
