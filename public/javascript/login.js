@@ -13,12 +13,11 @@ async function login (event) {
             }),
             headers: {'Content-Type': 'application/json'}
         })
+        console.log("response from login", res);
         if(res.ok){
-            console.log(res)
             document.location.replace('/dashboard/')
         } 
         if(res.status == 400){
-            console.log('wrong password')
             $('#login_container').html('')
             $('#login_container').append(`
             <div class="alert alert-danger fade show">
@@ -27,16 +26,12 @@ async function login (event) {
         `)
         }
         if(res.status == 404){
-            console.log('wrong username')
             $('#login_container').html('')
             $('#login_container').append(`
             <div class="alert alert-danger fade show">
                 <strong>Incorrect username.</strong>
             </div>
         `)
-        }
-        else {
-            alert(res.statusText)
         }
     }
     if(!username){
@@ -82,8 +77,7 @@ async function signUp(event){
             headers: {'Content-Type': 'application/json'}
         })
         if(res.ok){
-            console.log(res)
-            document.location.replace('/dashboard/')
+            // document.location.replace('/dashboard/')
         }
         if(res.status == 500){
             $('#signup_container').html('')
@@ -92,9 +86,6 @@ async function signUp(event){
                 <strong>This username already exists.</strong>
             </div>
         `)
-        } else {
-            console.log(res)
-            //#signup_container
         }
     }
     if(!username){
@@ -122,7 +113,6 @@ async function signUp(event){
     `)
     }
     if(password.length < 8){
-        console.log(password.length)
         $('#signup_container').html('')
         $('#signup_container').append(`
         <div class="alert alert-danger fade show">
@@ -137,7 +127,7 @@ async function signUp(event){
             <strong>Please enter username and password.</strong>
         </div>
     `)
-    }
+    } 
 }
 
 document.querySelector('#login').addEventListener('submit', login)
