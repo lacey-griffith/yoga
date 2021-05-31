@@ -26,7 +26,7 @@ function printPoses(poses, target_group) {
       } else {
     $('#pose_container').append(`
     <div class='col col-sm-auto col-md-auto col-lg-auto mt-3 mb-3 align-self-center'>
-    <div class="card results-card" style="width: 18rem;">
+    <div class="card results-card col-sm-4 py-2 h-200" style="width: 18rem; height: 37rem;">
       <img src="${poses[i].demo}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${poses[i].pose_name}</h5>
