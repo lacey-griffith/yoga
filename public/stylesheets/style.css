@@ -8,7 +8,7 @@
 }
 
 
-* body {
+* body, html, .dashboard-wall {
     background-color: var(--darkpurple);
 }
 
@@ -39,6 +39,7 @@ li a:hover:not(.active) {
 }
 
 .dashboard-wall {
+    width: 100%;
     background-image: url('../images/NamasteFit_Blank.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -69,7 +70,6 @@ li a:hover:not(.active) {
 }
 .container {
   margin-top: 100px;
-  margin-bottom: 100px;
 }
 #logout, #dashboard, #saved-poses {
     float: right;
