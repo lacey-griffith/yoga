@@ -50,6 +50,7 @@ color: white;
 .form-control {
   font-family:'Quicksand', sans-serif;
 }
+
 /* end login page */
 .dashboard-wall {
     width: 100%;
@@ -63,14 +64,13 @@ color: white;
 
 .alert {
 margin-bottom: 0 !important;
-
 }
 
 .jumbotron1 {
   background-color: var(--darkpurple);
   font-family:'Pacifico', cursive;
   color: #ffffff;
-  padding: 0 10px 0 10px;
+  padding: 0 10px 20px 10px;
   text-align: center;
 }
 
@@ -79,6 +79,8 @@ margin-bottom: 0 !important;
   border-color: var(--newteal) !important;
   margin-top: 10px;
   color: white !important;
+  font-family: 'Pacifico', cursive;
+  text-decoration: none !important;
 }
 .dropdown {
 opacity: 100%;
@@ -106,10 +108,11 @@ align-items: center;
 }
 
 /* CARDS */
-.card-title {
+.card-title , .section-title {
   font-family: 'Pacifico', cursive;
   font-size: 1.5em;
   font-weight: lighter;
+  text-decoration: none !important;
 }
 .card-text {
   font-family: 'Quicksand', sans-serif;
@@ -117,13 +120,15 @@ align-items: center;
 .list-group-item {
   font-family: 'Quicksand', sans-serif;
 }
-.card-body{
-  font-family: 'Quicksand', sans-serif;;
+.card-body, .contact {
+  font-family: 'Quicksand', sans-serif;
+  text-decoration: none !important;
 }
 
 /*footer styling*/
 footer {
-  position: fixed;
+  padding-top: 20px;
+  background-color: var(--darkpurple);
   bottom: 0;
   width: 100%;
   text-align: center;
@@ -141,7 +146,7 @@ form label {
   text-decoration: underline;
 }
 .contact-us {
-  text-align:center
+  text-align:center;
 }
 .contact-form input,
 .contact-form textarea {
