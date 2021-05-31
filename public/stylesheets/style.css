@@ -96,6 +96,10 @@ margin-top: 100px;
 #dropdown div {
 align-items: center;
 }
+.btn-secondary {
+  background-color: white !important;
+  color: black !important;
+}
 
 /* CARDS */
 .card-title {
