@@ -5,13 +5,6 @@ const {User} = require('../models');
 
 
 router.get('/', (req, res) => {
-    // console.log('=============')
-    // console.log(req.session, 'home-route')
-    // console.log('=============')
-    // if (req.session.loggedIn) {
-    //     res.redirect('/dashboard');
-    //     return;
-    //   }
     res.render('login')
 });
 
