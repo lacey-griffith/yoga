@@ -102,13 +102,15 @@ li a:hover:not(.active) {
 
 /*footer styling*/
 footer {
-  position: fixed;
+  background: var(--darkpurple);
+  padding-top: 50px;
   bottom: 0;
   width: 100%;
   text-align: center;
 }
 .contact {
   background-color: var(--darkpurple);
+  padding-top: 20px;
 }
 .contact h1,
 .contact-form h3 {
