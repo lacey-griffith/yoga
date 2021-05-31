@@ -6,7 +6,7 @@ const { Pose, TargetGroup } = require('../../models');
 // GET all poses
 router.get('/', (req, res) => {
     Pose.findAll({
-        attributes: ['id','pose_name','difficulty','target_group_id'],
+        attributes: ['id','pose_name','difficulty','demo','description','target_group_id'],
         include: {
             model: TargetGroup,
             attributes: ['id','target_group']
@@ -59,6 +59,8 @@ router.post('/', (req, res) => {
     Pose.create({
         pose_name: req.body.pose_name,
         difficulty: req.body.difficulty,
+        description: req.body.description,
+        demo: req.body.demo,
         target_group_id: req.body.target_group_id
     }).then(poseData => res.json(poseData))
     .catch(err => res.status(500).json(err))

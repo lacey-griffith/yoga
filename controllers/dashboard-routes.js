@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         attributes: ['id','target_group'],
         include: {
             model: Pose,
-            attributes: ['id','pose_name','difficulty','target_group_id']
+            attributes: ['id','pose_name','difficulty','demo','description','target_group_id']
         }
 
     }).then(targetData => {
