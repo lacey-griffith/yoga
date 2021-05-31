@@ -40,6 +40,14 @@ background-color: #555;
 color: white;
 }
 
+/* login page */
+.hero-intro {
+ font-family: 'Quicksand', sans-serif; 
+}
+.form-control {
+  font-family:'Quicksand', sans-serif;
+}
+/* end login page */
 .dashboard-wall {
   width: 100%;
   height: 100vh !important;

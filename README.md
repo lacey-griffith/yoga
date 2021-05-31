@@ -10,7 +10,7 @@
 This application allows yoga enthusiasts to learn more about yoga poses. Users can search by targeted anatomy via the dropdown once an account is created and results will populate the page. Our motivation for development is to improve the experience surrounding yoga, share knowledge on the health benefits and allow users to personalize their yoga journey.
 
 ## Usage
-To use the application, visit the website and enter your user
+To use the application, visit the website and sign up with a username and password- then begin to Namaste Fit! 
 
 ## Technologies Used
 HTML, CSS, JavaScript, MySQL, Sequelize, Express.js
@@ -22,6 +22,9 @@ HTML, CSS, JavaScript, MySQL, Sequelize, Express.js
 * [Kyle McKinley](https://github.com/kjmckinley)
 
 ## Site Images
+![Site Image]()
+![Site Image]()
+![Site Image]()
 
 ## Future Development
 * Add functionality to save poses as favorites and revist 'favorited' in the future.
