@@ -10,15 +10,44 @@
 
 * body {
     background-color: var(--darkpurple);
+}
+
+/* Navbar styling */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.dashboard-wall {
     background-image: url('../images/NamasteFit_Blank.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
-    background-size: cover;
 }
 
 .alert {
   margin-bottom: 0 !important;
+
 }
 
 .jumbotron1 {
@@ -40,6 +69,7 @@
 }
 .container {
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 #logout, #dashboard, #saved-poses {
     float: right;
