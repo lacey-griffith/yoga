@@ -1,15 +1,16 @@
 :root {
-    --lightpink: #e3c0d3;
-    --darkpurple: #71697A;
-    --grayblue: #576066;
-    --darkgreen: #2c514c;
-    --darkblueish: #122932;
-    --newteal: #58b8b1;
+  --lightpink: #e3c0d3;
+  --darkpurple: #71697A;
+  --grayblue: #576066;
+  --darkgreen: #2c514c;
+  --darkblueish: #122932;
+  --newteal: #58b8b1;
 }
-
+/* primary font is 'Pacifico', cursive */
+/* secondary font is 'Quicksand', sans-serif; */
 
 * body, html, .dashboard-wall {
-    background-color: var(--darkpurple);
+  background-color: var(--darkpurple);
 }
 
 /* Navbar styling */
@@ -36,6 +37,19 @@ li a {
   text-align: center;
   padding: 8px 10px;
   text-decoration: none;
+  opacity: 1;
+  font-family: 'Quicksand', sans-serif;
+}
+
+li a.active {
+background-color: #6188cc;
+color: white;
+}
+
+li a:hover:not(.active) {
+background-color: #555;
+color: white;
+=======
 }
 
 li a:hover:not(.active) {
@@ -46,7 +60,15 @@ li a:hover:not(.active) {
   background-color: #53daca;
 }
 
-/* dashboard styling */
+/* login page */
+.hero-intro {
+ font-family: 'Quicksand', sans-serif; 
+}
+.form-control {
+  font-family:'Quicksand', sans-serif;
+}
+
+/* end login page */
 .dashboard-wall {
     width: 100%;
     height: 100vh !important;
@@ -55,31 +77,32 @@ li a:hover:not(.active) {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
-
 }
 
 
 .alert {
-  margin-bottom: 0 !important;
-
+margin-bottom: 0 !important;
 }
 
 .jumbotron1 {
-    background-color: var(--darkpurple);
-    font-family:'Pacifico', cursive;
-    color: #ffffff;
-    padding: 0 10px 0 10px;
-    text-align: center;
+  background-color: var(--darkpurple);
+  font-family:'Pacifico', cursive;
+  color: #ffffff;
+  padding: 0 10px 20px 10px;
+  text-align: center;
 }
 
 .btn-info {
-    background-color: var(--newteal) !important;
-    border-color: var(--newteal) !important;
-    margin-top: 10px;
-    color: white !important;
+  background-color: var(--newteal) !important;
+  border-color: var(--newteal) !important;
+  margin-top: 10px;
+  color: white !important;
+  font-family: 'Pacifico', cursive;
+  text-decoration: none !important;
 }
 .dropdown {
-  opacity: 100%;
+opacity: 100%;
+font-family: 'Quicksand', sans-serif;
 }
 .container {
   margin-top: 20px;
@@ -95,10 +118,30 @@ li a:hover:not(.active) {
 }
 /* DROP DOWN MENU */
 #dropdown div {
-  align-items: center;
+align-items: center;
+}
+.btn-secondary {
+  background-color: white !important;
+  color: black !important;
 }
 
 /* CARDS */
+.card-title , .section-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5em;
+  font-weight: lighter;
+  text-decoration: none !important;
+}
+.card-text {
+  font-family: 'Quicksand', sans-serif;
+}
+.list-group-item {
+  font-family: 'Quicksand', sans-serif;
+}
+.card-body, .contact {
+  font-family: 'Quicksand', sans-serif;
+  text-decoration: none !important;
+}
 
 /*footer styling*/
 footer {
@@ -122,7 +165,7 @@ form label {
   text-decoration: underline;
 }
 .contact-us {
-  text-align:center
+  text-align:center;
 }
 .contact-form input,
 .contact-form textarea {
