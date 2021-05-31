@@ -21,6 +21,16 @@ Pose.init({
   difficulty: {
     type: DataTypes.STRING,
     allowNull: false,
+    defaultValue: '/images/lotusbehappy.png'
+  },
+  demo: {
+    type: DataTypes.STRING,
+    allowNull: true,
+
+  },
+  description: {
+    type: DataTypes.STRING,
+    allowNull: false
   },
   target_group_id: {
     type: DataTypes.INTEGER,

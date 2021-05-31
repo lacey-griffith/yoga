@@ -43,4 +43,6 @@ Pose.belongsTo(TargetGroup)
 TargetGroup.hasMany(Pose)
 
 
+
 module.exports = { Pose, User, Comment, TargetGroup };
+

@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
         attributes: ['id','target_group'],
         include: {
             model: Pose,
-            attributes: ['id','pose_name','difficulty','target_group_id']
+            attributes: ['id','pose_name','difficulty','description','demo','target_group_id']
         }
 
     }).then(targetData => res.json(targetData))
@@ -24,7 +24,7 @@ router.get('/:id', (req,res) => {
         attributes: ['id','target_group'],
         include: {
             model: Pose,
-            attributes: ['id','pose_name','difficulty','target_group_id']
+            attributes: ['id','pose_name','difficulty','description','demo','target_group_id']
         }
 }).then(targetData => {
     if(!targetData){
@@ -50,7 +50,7 @@ router.post('/card', (req, res) => {
         },
         include: {
             model: Pose,
-            attributes: ['pose_name', 'difficulty']
+            attributes: ['pose_name', 'difficulty','demo','description']
         }
         })
         .then(searchResults => {
