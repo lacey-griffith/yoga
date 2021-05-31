@@ -4,7 +4,7 @@ const poseData = [
     {
         pose_name: 'Boat Pose',
         difficulty: 'Beginner',
-        target_group: [1]
+        target_group_id: [1]
     },
     {
         pose_name: 'Crow Pose',
