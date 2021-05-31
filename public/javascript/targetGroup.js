@@ -11,17 +11,9 @@ $('#dropdown-list li a').on('click', function () {
             return res.json();
         }).then(res => {
             const poses = res.poses
-
-            // console.log(poses[0])
-            // console.log(target_group_id, 'selected target group id')
             printPoses(poses, target_group)
-            //return poses[0];
         })
     })
-
-// function printPoses(poses){
-//     return poses;
-// }
 
 function printPoses(poses, target_group) {
     console.log(target_group, 'target group')

@@ -111,11 +111,6 @@ const poseData = [
     //     title: '',
     //     difficulty: '',
     //     target_group_id: []
-    // },
-    // {
-    //     title: '',
-    //     difficulty: '',
-    //     target_group_id: []
     // }
 ]
 

@@ -8,8 +8,15 @@
 }
 
 
-* body {
+* body, html {
     background-color: var(--darkpurple);
+}
+.hero-intro {
+  font-size: 2em;
+}
+.dashboard-wall {
+  height: 100vh ;
+  width: 100%;
 }
 
 /* Navbar styling */
@@ -56,6 +63,7 @@ li a:hover:not(.active) {
     color: #ffffff;
     padding: 0 10px 0 10px;
     text-align: center;
+    justify-content: center;
 }
 
 .btn-info {
@@ -86,3 +94,7 @@ li a:hover:not(.active) {
 }
 
 /* CARDS */
+.card-title{
+  font-family: 'Pacifico', cursive;
+  font-size: 1.7em;
+}
