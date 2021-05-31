@@ -14,20 +14,28 @@
 }
 
 /* Navbar styling */
+
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 15%;
-  background-color: #d3d3d3;
+  overflow: hidden;
+  /* #53daca */
+  background-color: #da5853;
   position: fixed;
-  overflow: auto;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
 }
 
 li a {
   display: block;
-  color: #000;
-  padding: 8px 16px;
+  color: white;
+  text-align: center;
+  padding: 8px 10px;
   text-decoration: none;
   opacity: 1;
   font-family: 'Quicksand', sans-serif;
@@ -41,6 +49,15 @@ color: white;
 li a:hover:not(.active) {
 background-color: #555;
 color: white;
+=======
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #53daca;
 }
 
 /* login page */
@@ -61,6 +78,7 @@ color: white;
     background-attachment: fixed;
     background-position: center center;
 }
+
 
 .alert {
 margin-bottom: 0 !important;
@@ -90,13 +108,13 @@ font-family: 'Quicksand', sans-serif;
   margin-top: 20px;
 }
 #logout, #dashboard, #saved-poses {
-  float: left;
-  width: 15%;
-  margin-top: 10px;
-  font-size: 20px;
-  padding: 0 5px;
-  margin: 8px;
-  font-weight: lighter;
+    float: right;
+    width: 15%;
+    margin-top: 8px;
+    font-size: 14px;
+    padding: 0 5px;
+    margin: 6px;
+    font-weight: lighter;
 }
 /* DROP DOWN MENU */
 #dropdown div {
@@ -127,14 +145,15 @@ align-items: center;
 
 /*footer styling*/
 footer {
-  padding-top: 20px;
-  background-color: var(--darkpurple);
+  background: var(--darkpurple);
+  padding-top: 50px;
   bottom: 0;
   width: 100%;
   text-align: center;
 }
 .contact {
   background-color: var(--darkpurple);
+  padding-top: 20px;
 }
 .contact h1,
 .contact-form h3 {
