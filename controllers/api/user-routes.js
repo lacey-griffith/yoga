@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const isLoggedIn = require('../../utils/auth')
-const { User } = require('../../models');
+const {
+    User
+} = require('../../models');
 const passport = require('passport');
 
 
@@ -8,64 +10,84 @@ const passport = require('passport');
 router.get('/', (req, res) => {
     User.findAll({
 
-    }).then(userData => res.json(userData))
-    .catch(err => res.status(400).json(err))
+        }).then(userData => res.json(userData))
+        .catch(err => res.status(400).json(err))
 });
 
 //GET one user by id
-router.get('/:id', (req,res) => {
+router.get('/:id', (req, res) => {
     User.findOne({
-        where: {
-            id: req.params.id
-        }
-    }).then(userData => {
-        if(!userData){
-            res.status(404).json({message: 'User not found'})
-            return
-        }
-        res.json(userData)
-    })
-    .catch(err => res.status(500).json(err))
+            where: {
+                id: req.params.id
+            }
+        }).then(userData => {
+            if (!userData) {
+                res.status(404).json({
+                    message: 'User not found'
+                })
+                return
+            }
+            res.json(userData)
+        })
+        .catch(err => res.status(500).json(err))
 });
 
 //UPDATE user information
 router.put('/:id', (req, res) => {
     User.update(req.body, {
-        individualHooks: true,
-        where: {
-            id: req.params.id
-        }
-    }).then(userData => {
-        if(!userData[0]){
-            res.status(404).json({message: 'No user found, try again!'})
-            return
-        }
-        res.json(userData)
-    })
-    .catch(err => res.status(500).json(err))
+            individualHooks: true,
+            where: {
+                id: req.params.id
+            }
+        }).then(userData => {
+            if (!userData[0]) {
+                res.status(404).json({
+                    message: 'No user found, try again!'
+                })
+                return
+            }
+            res.json(userData)
+        })
+        .catch(err => res.status(500).json(err))
 });
 
 //POST new user
-router.post('/', (req,res) => {
+router.post('/', (req, res) => {
+    console.log("req.body", req.body);
     User.create({
-        username: req.body.username,
-        password: req.body.password
-    })
-    .then(userData => res.json(userData))
-    .catch(err => res.status(500).json(err))
+            username: req.body.username,
+            password: req.body.password
+        })
+        .then(userData => {
+            console.log("userDAta", userData);
+            req.session.save(() => {
+                req.session.user_id = userData.id;
+                req.session.username = userData.username;
+                req.session.loggedIn = true;
+                res.json(userData);
+            })
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).json(err)
+        })
 });
 
 //login a user
 router.post('/login', (req, res) => {
     User.findOne({
-        where: {username: req.body.username}
+        where: {
+            username: req.body.username
+        }
     }).then(userData => {
-        if(!userData){
+        if (!userData) {
             res.status(404).json('User not found.')
         }
         const correctPw = userData.pwCheck(req.body.password)
-        if(!correctPw){
-            res.status(400).json({message: 'Incorrect password!'})
+        if (!correctPw) {
+            res.status(400).json({
+                message: 'Incorrect password!'
+            })
             alert('Incorrect password!')
             return
         }
@@ -73,14 +95,18 @@ router.post('/login', (req, res) => {
             req.session.user_id = userData.id;
             req.session.username = userData.username;
             req.session.loggedIn = true;
+            res.json({
+                user: userData,
+                message: 'Login successful!'
+            })
         })
-        res.json({ user: userData, message: 'Login successful!'})
+
     }).catch(err => res.status(500).json(err))
 })
 
 //logout a user
 router.post('/logout', (req, res) => {
-    if(req.session.loggedIn){
+    if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
         })
@@ -92,16 +118,18 @@ router.post('/logout', (req, res) => {
 //DELETE user by id
 router.delete('/:id', (req, res) => {
     User.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
-    .then(userData => {
-        if(!userData){
-            res.status(404).json({message: 'User not found.'})
-        }
-        res.json(userData)
-    })
-    .catch(err => res.status(500).json(err))
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(userData => {
+            if (!userData) {
+                res.status(404).json({
+                    message: 'User not found.'
+                })
+            }
+            res.json(userData)
+        })
+        .catch(err => res.status(500).json(err))
 })
 module.exports = router;

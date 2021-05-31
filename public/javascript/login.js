@@ -77,7 +77,7 @@ async function signUp(event){
             headers: {'Content-Type': 'application/json'}
         })
         if(res.ok){
-            // document.location.replace('/dashboard/')
+            document.location.replace('/dashboard/')
         }
         if(res.status == 500){
             $('#signup_container').html('')
