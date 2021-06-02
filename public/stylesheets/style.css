@@ -26,7 +26,7 @@ nav ul {
   width: 100%;
 }
 
-li {
+nav li {
   float: left;
 }
 
@@ -51,7 +51,7 @@ color: white;
 }
 
 li a:hover:not(.active) {
-  background-color: #111;
+  background-color: var(--lightpink);
 }
 
 .active {
@@ -101,11 +101,12 @@ margin-bottom: 0 !important;
 .dropdown {
 opacity: 100%;
 font-family: 'Quicksand', sans-serif;
+margin-top: 20px;
 }
 .container {
   margin-top: 20px;
 }
-#logout, #dashboard, #saved-poses {
+#dashboard, #saved-poses {
     width: 15%;
     margin-top: 8px;
     font-size: 14px;
