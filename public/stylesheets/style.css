@@ -20,8 +20,7 @@ nav ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  /* #53daca */
-  background-color: #da5853;
+  background-color: var(--newteal);
   position: fixed;
   top: 0;
   width: 100%;
@@ -42,7 +41,7 @@ li a {
 }
 
 li a.active {
-background-color: #6188cc;
+background-color: var(--darkblueish);
 color: white;
 }
 
