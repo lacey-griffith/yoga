@@ -1,65 +1,43 @@
-# [Project 2 Name]
+# Namaste Fit
 
 ## Table Of Contents
 * [Description](#description)
 * [Usage](#usage)
-* [User Story](#user-story)
-* [Acceptance Criteria](#acceptance-criteria)
 * [Technologies Used](#technologies-used)
 * [Contributors](#contributors)
-* [Licensing](#licensing)
-* [Demo](#demo)
-* [Questions](#questions)
-* [Grading Criteria](#grading-criteria)
-
+----------------------------
 ## Description
+This application allows yoga enthusiasts to learn more about yoga poses. Users can search by targeted anatomy via the dropdown once an account is created and results will populate the page. Our motivation for development is to improve the experience surrounding yoga, share knowledge on the health benefits and allow users to personalize their yoga journey.
 
+---------------------------
 ## Usage
+To use the application, visit the website and enter your desired username and password in the SignUp form. Once logged in choose an area of your anatomy that you would like to focus on. The proper poses per target group will be displayed, there you will find the difficulty level, a quick description of the pose, an image demo and even a link to a live demo via youtube.
 
-## User Story
+---------------------------
+## Technologies used
+- JavaScript
+- HTML
+- Handlebars.js
+- CSS
+- BootStrap
+- JQuery
 
-## Acceptance Criteria
-
-## Technologies Used
-
-## Contributors (add your github profile link in parenthesis!)
-* [Samantha Arellano]()
-* [Fernanda Frers](https://https://github.com/balloonicorn92)
+---------------------------
+## Contributors
+* [Samantha Arellano](https://github.com/sambollano)
+* [Fernanda Frers](https://github.com/balloonicorn92)
 * [Lacey Griffith](https://github.com/lacey-griffith)
-* [Kyle McKinley]()
+* [Kyle McKinley](https://github.com/kjmckinley)
 
-## Licensing
+---------------------------
+## Site Images
+![Site Image](public/images/login_page.png)
+![Site Image](public/images/search_results.png)
 
-## Demo
+---------------------------
+## Future Development
+* Add functionality to save poses as favorites and revist 'favorited' in the future.
+* Allow users to build their own routine
+* Increase user experience and interaction by allowing comments/feedback on poses
 
-## Questions
-
-
-## Grading Criteria:
-
-### Project Requirments
-[ ] Use Node.js and Express.js to create a RESTful API.  
-[ ] Use Handlebars.js as the templating engine.  
-[ ] Use MySQL and the Sequelize ORM for the database.  
-[ ] Have both GET and POST routes for retrieving and adding new data.  
-[ ] Be deployed using Heroku (with data).  
-[ ] Use at least one new library, package, or technology that we haven’t discussed.  
-[ ] Have a polished UI.  
-[ ] Be responsive.  
-[ ] Be interactive (i.e., accept and respond to user input).  
-[ ] Have a folder structure that meets the MVC paradigm.  
-[ ] Include authentication (express-session and cookies).  
-[ ] Protect API keys and sensitive information with environment variables.  
-[ ] Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class/id naming conventions, indentation, quality comments, etc.).  
-[ ] Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).  
-[ ] Add project to portfolio.  
-
-### Presentation Requirments
-[ ] Elevator Pitch  
-[ ] Concept (User Story, motivation for dev  
-[ ] Process (Technologies used, role assignments, challenges, successes  
-[ ] Demo  
-[ ] Future development  
-[ ] Links to deployment and github repo  
-[ ] Every group member speaks during presentaiton  
-[ ] Use presentation software (ex. Powerpoint)
+If you have ideas for our application- submit an issue and label it as 'enhancement' and we'll take a look!

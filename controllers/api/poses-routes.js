@@ -1,10 +1,16 @@
 const router = require('express').Router();
-const { Pose } = require('../../models');
+const isLoggedIn = require('../../utils/auth')
+const { Pose, TargetGroup } = require('../../models');
+
 
 // GET all poses
 router.get('/', (req, res) => {
     Pose.findAll({
-
+        attributes: ['id','pose_name','difficulty','demo','description','target_group_id'],
+        include: {
+            model: TargetGroup,
+            attributes: ['id','target_group']
+        }
     })
     .then(poseData => res.json(poseData))
     .catch(err => res.status(500).json(err))
@@ -13,7 +19,13 @@ router.get('/', (req, res) => {
 // GET poses by id
 router.get('/:id', (req, res) => {
     Pose.findOne({
-        where: {id: req.params.id }
+        where: {
+            id: req.params.id
+        },
+        include: {
+            model: TargetGroup,
+            attributes: ['target_group']
+        }
     }).then(poseData => {
         if(!poseData){
             res.status(404).json({message: 'No pose was found!'})
@@ -28,8 +40,10 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     Pose.create({
         pose_name: req.body.pose_name,
-        chakra: req.body.chakra,
-        muscle_group: req.body.muscle_group
+        difficulty: req.body.difficulty,
+        description: req.body.description,
+        demo: req.body.demo,
+        target_group_id: req.body.target_group_id
     }).then(poseData => res.json(poseData))
     .catch(err => res.status(500).json(err))
 });
