@@ -4,40 +4,23 @@
 * [Description](#description)
 * [Usage](#usage)
 * [Technologies Used](#technologies-used)
-* [Installation](#Installation)
 * [Contributors](#contributors)
 ----------------------------
 ## Description
 This application allows yoga enthusiasts to learn more about yoga poses. Users can search by targeted anatomy via the dropdown once an account is created and results will populate the page. Our motivation for development is to improve the experience surrounding yoga, share knowledge on the health benefits and allow users to personalize their yoga journey.
 
+---------------------------
 ## Usage
 To use the application, visit the website and enter your desired username and password in the SignUp form. Once logged in choose an area of your anatomy that you would like to focus on. The proper poses per target group will be displayed, there you will find the difficulty level, a quick description of the pose, an image demo and even a link to a live demo via youtube.
 
+---------------------------
 ## Technologies used
-- Javascript
+- JavaScript
 - HTML
+- Handlebars.js
 - CSS
-
-##### Dependecies needed for use:
-- Sequelize
-- express
-- dotenv
-- mysql2
-- express-handlebars
-- bcrypt
-- connect-session-sequelize
-- express-session
-- handlebars
-- jest [for testing]
-
-### Installation
-1) Navigate to config/connection.js and fill in server username and password
-2) Install dependency packages:
-`npm install`
-3) Seed your project with sample seeds provided
-`npm run seeds`
-4) Run your server
-`npm start`
+- BootStrap
+- JQuery
 
 ---------------------------
 ## Contributors
@@ -46,11 +29,12 @@ To use the application, visit the website and enter your desired username and pa
 * [Lacey Griffith](https://github.com/lacey-griffith)
 * [Kyle McKinley](https://github.com/kjmckinley)
 
+---------------------------
 ## Site Images
-![Site Image]()
-![Site Image]()
-![Site Image]()
+![Site Image](public/images/login_page.png)
+![Site Image](public/images/search_results.png)
 
+---------------------------
 ## Future Development
 * Add functionality to save poses as favorites and revist 'favorited' in the future.
 * Allow users to build their own routine
