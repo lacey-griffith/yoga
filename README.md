@@ -11,7 +11,7 @@ This application allows yoga enthusiasts to learn more about yoga poses. Users c
 
 ---------------------------
 ## Usage
-To use the application, visit the website and enter your desired username and password in the SignUp form. Once logged in choose an area of your anatomy that you would like to focus on. The proper poses per target group will be displayed, there you will find the difficulty level, a quick description of the pose, an image demo and even a link to a live demo via youtube.
+To use the application, visit the website [here](https://yoga-finish.herokuapp.com/) and enter your desired username and password in the SignUp form. Once logged in choose an area of your anatomy that you would like to focus on. The proper poses per target group will be displayed, there you will find the difficulty level, a quick description of the pose, an image demo and even a link to a live demo via youtube.
 
 ---------------------------
 ## Technologies used
@@ -41,3 +41,4 @@ To use the application, visit the website and enter your desired username and pa
 * Increase user experience and interaction by allowing comments/feedback on poses
 
 If you have ideas for our application- submit an issue and label it as 'enhancement' and we'll take a look!
+
